@@ -1,0 +1,1 @@
+Essa pasta armazena apenas recursos externos, como imagens e outros elementos de mídia

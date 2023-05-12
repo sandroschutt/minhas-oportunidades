@@ -1,0 +1,14 @@
+{
+  "vagas" : {
+    "vaga_0" : {
+      "id" : "0",
+      "nome": "teste",
+      "empresa": "empresa teste",
+      "portal": "portal teste",
+      "categoria": "testando",
+      "dataaplicacao": "01/01/1999",
+      "dataretorno": "01/01/1999",
+      "status": "aplicado"
+    }
+  }
+}

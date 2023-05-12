@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS do Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      integrity="sha384-Um1zeJ7hTmZRUGMPpGKL9zxLyJ5TC+OGuhxIVP1I4rMGS+MkDQin3QqMkRyYHz+a"
+      crossorigin="anonymous"
+    />
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha384-/6tIlVT8eJG1+IlzprO9gcrsF7eMKO26aD2LLl5o6IwZ9yTKTOYnKSXoVAW+nGJo"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Minhas Oportunidades</title>
+  </head>
+
+  <body>
+    <div id="mo-main-content">
+      <!-- Navigation -->
+      <nav>
+        <ul id="main-navigation-desktop" class="d-flex border border-dark">
+          <li class="d-inline px-3">Option</li>
+          <li class="d-inline px-3">Option</li>
+          <li class="d-inline px-3">Option</li>
+          <li class="d-inline px-3">Option</li>
+          <li class="d-inline px-3">Option</li>
+          <li class="d-inline px-3">Option</li>
+        </ul>
+      </nav>
+
+      <div id="toolbar" class="row d-flex border border-dark">
+        
+      </div>
+
+      <div class="row d-flex" id="mo-content">
+        <!-- Conteúdo renderizado -->
+        <div id="content" class="border border-primary">
+          
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <footer>
+    <!-- JS do Bootstrap (necessário para alguns plugins do Bootstrap) -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Babel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.min.js"></script>
+  </footer>
+
+  <style>
+    form {
+      margin: 100px 40% 0;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input,
+    select,
+    button {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    button {
+      margin: 25px 0;
+    }
+
+    #main-navigation-desktop {
+      margin-bottom: 0;
+    }
+
+    #toolbar,
+    #sidebar,
+    #mo-content {
+      min-height: 50px;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+
+    #mo-content div {
+      height: 100vh;
+    }
+
+    #mo-content {
+      width: 100%;
+    }
+
+    #content {
+      width: 100%;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
+    /* table {
+        width: 100%;
+    } */
+  </style>
+  <!-- Scripts -->
+  <!-- Classes -->
+  <script type="module" src="./src/classes/Vagas/Vagas.js"></script>
+  <script type="module" src="./src/classes/Vaga/Vaga.js"></script>
+
+  <!-- Templates -->
+  <script src="./template/pages/home.js"></script>
+  <script src="./template/toolbar.js"></script>
+  <script type="module" src="./template/pages/new-vaga.js"></script>
+
+  <script src="./src/data/load.js"></script>
+
+  <script>
+    
+  </script>
+</html>

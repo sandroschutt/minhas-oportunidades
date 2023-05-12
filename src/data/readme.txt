@@ -1,0 +1,1 @@
+Essa pasta guarda apenas arquivos JSON
