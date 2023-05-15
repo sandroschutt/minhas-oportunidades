@@ -1,6 +1,6 @@
 {
-  "vagas" : {
-    "vaga_0" : {
+  "vagas" : [
+    {
       "id" : "0",
       "nome": "teste",
       "empresa": "empresa teste",
@@ -10,5 +10,5 @@
       "dataretorno": "01/01/1999",
       "status": "aplicado"
     }
-  }
+  ]
 }

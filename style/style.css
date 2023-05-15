@@ -1,0 +1,53 @@
+body {
+  background-color: #282828;
+}
+
+form {
+  margin: 100px 40% 0;
+}
+
+label {
+  font-weight: bold;
+}
+
+#main-navigation-desktop {
+  margin-bottom: 0;
+  background-color: rgb(27, 27, 27);
+  font-size: 14px;
+}
+
+#main-navigation-desktop:hover {
+  cursor: pointer;
+}
+
+#toolbar,
+#sidebar,
+#mo-content {
+  min-height: 50px;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+#mo-content {
+  width: 100%;
+}
+
+#content {
+  width: 100%;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+#toolbar-vagas,
+#toolbar-insights,
+#toolbar-functions {
+  border-right: 1px solid rgb(68, 68, 68);
+}
+
+#toolbar {
+  background-color: #222222;
+}
+
+#toolbar i {
+  font-size: 12px;
+}

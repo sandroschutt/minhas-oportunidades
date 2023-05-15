@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head></head>
+  <body>
+    <div id="mo-main-content">
+      <!-- Navigation -->
+      <nav></nav>
+
+      <div id="toolbar" class="row d-flex border border-dark"></div>
+
+      <div class="row d-flex" id="mo-content">
+        <div id="content" class="border border-primary new-vaga">
+          <div class="form-new-vaga">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" />
+
+            <label for="empresa">Empresa</label>
+            <input type="text" name="empresa" id="empresa" />
+
+            <label for="portal">Portal</label>
+            <select name="portal" id="portal">
+              <option value="linkedin">linkedin</option>
+              <option value="gupy">gupy</option>
+              <option value="email">email</option>
+            </select>
+
+            <label for="categoria">Categoria</label>
+            <select name="categoria" id="categoria">
+              <option value="front-end">front-end</option>
+              <option value="front-end-pleno">front-end-pleno</option>
+              <option value="front-end-senior">front-end-senior</option>
+              <option value="back-end">back-end</option>
+              <option value="back-end-pleno">back-end-pleno</option>
+              <option value="back-end-senior">back-end-senior</option>
+              <option value="fullstack">fullstack</option>
+              <option value="fullstack-pleno">fullstack-pleno</option>
+              <option value="fullstack-senior">fullstack-senior</option>
+            </select>
+
+            <label for="data-aplicacao">Data de aplicação</label>
+            <input
+              type="date"
+              placeholder="dd-mm-yyyy"
+              min="1999-01-01"
+              value=""
+              name="data-aplicacao"
+              id="data-aplicacao"
+            />
+
+            <label for="data-retorno">Data de retorno</label>
+            <input
+              type="date"
+              placeholder="dd-mm-yyyy"
+              name="data-retorno"
+              id="data-retorno"
+            />
+
+            <label for="status">Status</label>
+            <select name="status" id="status">
+              <option value="aplicado">Aplicado</option>
+              <option value="fit-cultural">Fit cultural</option>
+              <option value="teste-tecnico">Teste técnico</option>
+              <option value="entrevista">Entrevista</option>
+              <option value="reprovado">Reprovado</option>
+              <option value="aprovado">Aprovado</option>
+            </select>
+
+            <button type="button" id="save-new-vaga">Adicionar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <!-- Scripts -->
+  <!-- JS do Bootstrap (necessário para alguns plugins do Bootstrap) -->
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"
+></script>
+<!-- Babel -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.min.js"></script>
+
+  <!-- Classes -->
+  <script type="module" src="./src/classes/Vagas/Vagas.js"></script>
+  <script type="module" src="./src/classes/Vaga/Vaga.js"></script>
+
+  <!-- Templates -->
+  <script type="module" src="./template/pages/new-vaga.js"></script>
+  <script type="module" src="./template/parts/toolbar.js"></script>
+
+  <!-- Template parts -->
+  <script type="module" src="./template/parts/header.js"></script>
+  <script type="module" src="./template/parts/navigation.js"></script>
+  <script type="module" src="./template/parts/footer.js"></script>
+
+  <!-- Data -->
+  <script type="module" src="./src/data/load.js"></script>
+
+  <script>
+    let today = new Date().toJSON().slice(0, 10);
+    $("#data-aplicacao").val(today);
+  </script>
+

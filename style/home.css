@@ -1,0 +1,65 @@
+#content table {
+    width: 100%;
+    background-color: #282828;
+    color: lightgrey
+}
+
+th, td {
+    padding-left: 10px;
+}
+
+#filter-tabs {
+    margin-right: 0;
+    margin-left: 0;
+    background-color: #282828;
+}
+
+#filter-tabs ul,
+#search-vagas {
+    padding-left: 0;
+    margin-bottom: 0;
+    padding: 8px 5px;
+}
+
+#search-vagas input {
+    padding-left: 8px;
+}
+
+.filter-tab {
+    display: inline;
+    font-size: 12px;
+}
+
+li.filter-tab {
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+li.filter-tab:hover {
+    cursor: pointer;
+}
+
+.filter-tab span {
+    display: inline;
+    margin-right: 3px;
+}
+
+.filter-tab i {
+    font-size: 8px;
+}
+
+.filter-rounded {
+    border-radius: 15px;
+}text-center
+
+.yellow-tab {
+    color: darkorange!important;
+}
+
+.yellow-tab:hover {
+    color: orange;
+}
+
+tr[data-id='0'] {
+    display: none;
+}

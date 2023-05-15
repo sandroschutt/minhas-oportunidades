@@ -1,23 +1,26 @@
-// A ESTRUTURA ESTÁ CERTA, MAS ESSES DADOS PRECISAM VIR DO LOCAL STORAGE
+import { Vagas } from "../../src/classes/Vagas/Vagas.js";
 
-getHomePageData();
+let data_vagas = new Vagas();
+let minhas_vagas = data_vagas.get_vagas();
+minhas_vagas = minhas_vagas.reverse();
 
-async function getHomePageData() {
-  let dummyData = await fetch("../../src/data/vagas/vagas.json");
-  let data = await dummyData.json();
+createHomePage(minhas_vagas);
 
-//   console.log(data)
+function createHomePage(minhas_vagas) {
+  table();
 
-  createHomePage(await data);
+  minhas_vagas.forEach((vaga) => {
+    table_row(vaga);
+  });
 }
 
-async function createHomePage(data) {
-    vagas = data.vagas;
-    vaga = vagas.vaga_0
-
-  const tableHead = `
+function table() {
+  const table = `
     <table>
         <thead class="border border-dark">
+            <th class="border border-dark">
+                <input type="checkbox" data-checkall>
+            </th>
             <th class="border border-dark">
                 Nome da vaga
             </th>
@@ -34,48 +37,43 @@ async function createHomePage(data) {
                 Data-apl
             </th>
             <th class="border border-dark">
-                Data-ret
-            </th>
-            <th class="border border-dark">
                 Status
             </th>
-            <th class="border border-dark">
-                E-mail
-            </th>
         </thead>
+        <tbody class="border border-dark">
+        </tbody>
+        </table>
         `;
 
-    let tableBody = 
-        `<tbody class="border border-dark">
-            <tr>
-                <td class="border border-dark col">
-                    ${vaga.nome}
-                </td>
-                <td class="border border-dark col">
-                    ${vaga.empresa}
-                </td>
-                <td class="border border-dark col">
-                    ${vaga.portal}
-                </td>
-                <td class="border border-dark col">
-                    ${vaga.categoria}
-                </td>
-                <td class="border border-dark col">
-                    ${vaga.dataaplicacao}
-                </td>
-                <td class="border border-dark col">
-                    ${vaga.dataretorno}
-                </td>
-                <td class="border border-dark col">
-                    ${vaga.status}
-                </td>
-                <td class="border border-dark col">
-                    ${vaga.email}
-                </td>
-            </tr>
-        </tbody>
-    </table>
+  $("#content").append(table);
+}
+
+function table_row(vaga) {
+  let row = `
+    <tr data-id="${vaga.id}">
+        <td class="border border-dark">
+            <input type="checkbox" data-check="" value="${vaga.id}">
+        </td>     
+        <td class="border border-dark">
+            ${vaga.nome}
+        </td>
+        <td class="border border-dark">
+            ${vaga.empresa}
+        </td>
+        <td class="border border-dark">
+            <a href="#">${vaga.portal}</a>
+        </td>
+        <td class="border border-dark">
+            ${vaga.categoria}
+        </td>
+        <td class="border border-dark">
+            ${vaga.dataaplicacao}
+        </td>
+        <td class="border border-dark">
+            ${vaga.status}
+        </td>
+    </tr>
 `;
 
-  $("#content").html(tableHead + tableBody);
+  $("tbody").append(row);
 }

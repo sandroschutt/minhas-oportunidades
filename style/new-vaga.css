@@ -1,0 +1,24 @@
+#content.new-vaga {
+  margin: 30px 10%;
+}
+
+.form-new-vaga {
+  padding: 3%;
+  color: white;
+}
+
+#save-new-vaga {
+  max-width: 15%;
+}
+
+.form-new-vaga input,
+.form-new-vaga select,
+.form-new-vaga button {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+button {
+  margin: 25px 0;
+}
