@@ -77,3 +77,5 @@ function table_row(vaga) {
 
   $("tbody").append(row);
 }
+
+export {table_row};

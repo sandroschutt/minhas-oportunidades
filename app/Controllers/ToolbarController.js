@@ -13,7 +13,6 @@ export class Toolbar {
         is_checked($(this))
           ? select_vaga($(this).val())
           : deselect_vaga($(this).val());
-        console.log(vagas_selecionadas)
       });
     });
 
@@ -84,8 +83,6 @@ export class Toolbar {
         vagas_selecionadas.length > 1 ?
         vaga.bulk_favorite(vagas_selecionadas) :
         vaga.favorite(vaga_selecionada);
-
-        console.log(vaga.get_favorites());
     })
   }
 }

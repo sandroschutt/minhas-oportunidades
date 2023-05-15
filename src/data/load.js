@@ -11,4 +11,6 @@ async function create_local_json_vagas() {
   
   localStorage.setItem("vagas", JSON.stringify(await vagas));
   localStorage.setItem("lixeira", JSON.stringify(lixeira));
+
+  window.location.reload();
 }

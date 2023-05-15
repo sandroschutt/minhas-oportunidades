@@ -15,13 +15,13 @@ th, td {
 }
 
 #filter-tabs ul,
-#search-vagas {
+#search {
     padding-left: 0;
     margin-bottom: 0;
     padding: 8px 5px;
 }
 
-#search-vagas input {
+#search input {
     padding-left: 8px;
 }
 
