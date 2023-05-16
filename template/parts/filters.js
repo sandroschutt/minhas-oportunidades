@@ -15,17 +15,18 @@ function create_table_view_filters() {
             data-filter
             id="todas"
             class="filter-tab btn btn-dark text-light filter-rounded py-1 px-2"
+            style="display: none;
             >
             <span><i class="fa-solid fa-circle"></i></span>
-            <span>Todas</span>
+            <span class="categoria">Todas</span>
             </li>
             <li
             data-filter
             id="aplicado"
             class="filter-tab btn btn-dark text-primary filter-rounded py-1 px-2"
             >
-            <span"><i class="fa-solid fa-circle"></i></span>
-            <span>Aplicado</span>
+            <span><i class="fa-solid fa-circle"></i></span>
+            <span class="categoria">Aplicado</span>
             </li>
             <li
             data-filter
@@ -33,7 +34,7 @@ function create_table_view_filters() {
             class="filter-tab btn btn-dark text-secondary filter-rounded py-1 px-2"
             >
             <span id="fit-cultural"><i class="fa-solid fa-circle"></i></span>
-            <span>Fit cultural</span>
+            <span class="categoria">Fit cultural</span>
             </li>
             <li
             data-filter
@@ -41,7 +42,7 @@ function create_table_view_filters() {
             class="filter-tab btn btn-dark text-info filter-rounded py-1 px-2"
             >
             <span><i class="fa-solid fa-circle"></i></span>
-            <span>Entrevista</span>
+            <span class="categoria">Entrevista</span>
             </li>
             <li 
             data-filter
@@ -50,7 +51,7 @@ function create_table_view_filters() {
             class="filter-tab btn btn-dark text-info filter-rounded py-1 px-2"
             >
             <span><i class="fa-solid fa-circle"></i></span>
-            <span>Exame prático</span>
+            <span class="categoria">Exame prático</span>
             </li>
             <li
             data-filter
@@ -58,7 +59,7 @@ function create_table_view_filters() {
             class="filter-tab btn btn-dark text-danger filter-rounded py-1 px-2"
             >
             <span><i class="fa-solid fa-circle"></i></span>
-            <span>Reprovado</span>
+            <span class="categoria">Reprovado</span>
             </li>
             <li
             data-filter
@@ -66,7 +67,7 @@ function create_table_view_filters() {
             class="filter-tab btn btn-dark text-success filter-rounded py-1 px-2"
             >
             <span><i class="fa-solid fa-circle"></i></span>
-            <span>Aprovado</span>
+            <span class="categoria">Aprovado</span>
             </li>
         </ul>
         </div>
@@ -91,16 +92,12 @@ function create_table_view_filters() {
   // }
 }
 
-function filter_vagas(filter) {
-  let filters = new Filters();
-  filters.filtrar(filter);
-}
-
 $("[data-filter]").each(function () {
-  $(this).click(() => {
-    let filter = $(this).attr("id");
-    filter_vagas(filter);
+  $(this).click(() => {;
+    filters.filtrar($(this).attr("id"))
   });
+  
+  $(this).append(filters.count($(this).attr('id')));
 });
 
 $('#search-vaga').keyup(function() {

@@ -13,6 +13,18 @@ export class Vagas {
     return minhas_vagas;
   }
 
+  get_vaga(id = String){
+    let vagas = this.get_vagas();
+    let vaga = {};
+    for(let i = 0; i <= vagas.length - 1; i++){
+      if(vagas[i].id == id) {
+        vaga = vagas[i];
+        break;
+      }
+    }
+    return vaga;
+  }
+
   index(id = String) {
     let vagas = this.get_vagas();
 
@@ -40,13 +52,22 @@ export class Vagas {
   update(vagas) {
     vagas = { vagas: vagas };
     localStorage.setItem("vagas", JSON.stringify(vagas));
-    // window.location.reload();
+    window.location.reload();
   }
 
-  edit(id = String) {
-    // let index = this.index(id);
-    // let vagas = this.get_vagas();
-    // this.update(vagas);
+  edit(id = String, edited_values = Object.JSON) {
+    let vagas = this.get_vagas();
+    let index = this.index(id)
+    
+    vagas[index].nome = edited_values.nome;
+    vagas[index].empresa = edited_values.empresa;
+    vagas[index].portal = edited_values.portal;
+    vagas[index].categoria = edited_values.categoria;
+    vagas[index].dataaplicacao = edited_values.dataaplicacao;
+    vagas[index].dataretorno = edited_values.dataretorno;
+    vagas[index].status = edited_values.status;
+
+    this.update(vagas);
   }
 
   delete(id = String) {

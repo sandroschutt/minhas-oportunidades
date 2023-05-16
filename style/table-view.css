@@ -42,10 +42,12 @@ li.filter-tab:hover {
 .filter-tab span {
     display: inline;
     margin-right: 3px;
+    font-size: 10px;
 }
 
 .filter-tab i {
-    font-size: 8px;
+    font-size: 8px!important;
+    margin-right: 5px;
 }
 
 .filter-rounded {

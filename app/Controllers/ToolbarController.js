@@ -1,4 +1,4 @@
-import Vagas from '../../src/classes/Vagas/Vagas.js';
+import Vagas from "../../src/classes/Vagas/Vagas.js";
 
 export class Toolbar {
   // CONJUNTO DE FUNÕES PARA AÇÕES EM MASSA
@@ -32,6 +32,7 @@ export class Toolbar {
     const select_vaga = function (checkbox) {
       vagas_selecionadas.push(checkbox);
       vaga_selecionada = checkbox;
+      return vaga_selecionada;
     };
 
     const select_all_vagas = function () {
@@ -54,35 +55,71 @@ export class Toolbar {
     };
 
     // CRUD
-    // Edit
-    $('#edit').on('click', function(event) {
-        event.preventDefault();
+    // Update
+    $("#edit").on("click", function (event) {
+      event.preventDefault();
+      let vagas = new Vagas();
+      let vaga = new Vagas().get_vaga(vaga_selecionada);
 
-        // atribuir o evento abaixo à função do modal
-        // capturar os dados do modal e passar para a vaga
-        // let vaga = new Vagas();
-        // vaga.edit(vaga_selecionada)
-    })
+      $("#edit-nome").val(vaga.nome);
+      $("#edit-empresa").val(vaga.empresa);
+      $("#edit-portal").val(vaga.portal);
+      // $('#edit-url').val(vaga.url);
+      // $('#edit-descricao').val(vaga.descricao);
+      $("#edit-categoria").val(vaga.categoria);
+      $("#edit-data-aplicacao").val(vaga.dataaplicacao);
+      $("#edit-data-retorno").val(vaga.dataretorno);
+      $("#edit-status").val(vaga.status);
+
+      $("#editar-vaga").click(() => {
+        let edited_values = get_edited_values();
+        vagas.edit(vaga.id, edited_values);
+      });
+    });
+
+    const get_edited_values = () => {
+      let nome = $("#edit-nome").val();
+      let empresa = $("#edit-empresa").val();
+      let portal = $("#edit-portal").val();
+      // $('#edit-url').val();
+      // $('#edit-descricao').val();
+      let categoria = $("#edit-categoria").val();
+      let dataaplicacao = $("#edit-data-aplicacao").val();
+      let dataretorno = $("#edit-data-retorno").val();
+      let status = $("#edit-status").val();
+
+      let edited_values = {
+        "nome" : nome,
+        "empresa" : empresa,
+        "portal" : portal,
+        "categoria" : categoria,
+        "dataaplicacao" : dataaplicacao,
+        "dataretorno" : dataretorno,
+        "status" : status
+      };
+
+      return edited_values;
+    };
 
     // Delete
-    $('#delete').on('click', function(event) {
-        event.preventDefault();
-        let vaga = new Vagas();
-        
-        vagas_selecionadas.length > 1 ?
-        vaga.bulk_delete(vagas_selecionadas) :
-        vaga.delete(vaga_selecionada);
-    })
+    $("#delete").on("click", function (event) {
+      event.preventDefault();
+      let vaga = new Vagas();
+
+      vagas_selecionadas.length > 1
+        ? vaga.bulk_delete(vagas_selecionadas)
+        : vaga.delete(vaga_selecionada);
+    });
 
     // META
     // favorite
-    $('#favorite').on('click', (event) => {
-        event.preventDefault();
-        let vaga = new Vagas();
+    $("#favorite").on("click", (event) => {
+      event.preventDefault();
+      let vaga = new Vagas();
 
-        vagas_selecionadas.length > 1 ?
-        vaga.bulk_favorite(vagas_selecionadas) :
-        vaga.favorite(vaga_selecionada);
-    })
+      vagas_selecionadas.length > 1
+        ? vaga.bulk_favorite(vagas_selecionadas)
+        : vaga.favorite(vaga_selecionada);
+    });
   }
 }
