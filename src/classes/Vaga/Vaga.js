@@ -21,12 +21,12 @@ export class Vaga {
         id = id.toString();
         this.id = id;
 
-        all_vagas.vagas.push(this);
+        all_vagas.vagas.unshift(this);
 
         localStorage.setItem("vagas", JSON.stringify(all_vagas));
 
-        // alert('Vaga adicionada com sucesso!');
+        alert('Vaga adicionada com sucesso!');
 
-        // window.location.href = './';
+        window.location.href = './';
     }
 }

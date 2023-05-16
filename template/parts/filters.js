@@ -16,28 +16,32 @@ function create_table_view_filters() {
             id="todas"
             class="filter-tab btn btn-dark text-light filter-rounded py-1 px-2"
             >
-            <span><i class="fa-solid fa-circle"></i></span>Todas
+            <span><i class="fa-solid fa-circle"></i></span>
+            <span>Todas</span>
             </li>
             <li
             data-filter
             id="aplicado"
             class="filter-tab btn btn-dark text-primary filter-rounded py-1 px-2"
             >
-            <span"><i class="fa-solid fa-circle"></i></span>Aplicado
+            <span"><i class="fa-solid fa-circle"></i></span>
+            <span>Aplicado</span>
             </li>
             <li
             data-filter
             id="fit-cultural"
             class="filter-tab btn btn-dark text-secondary filter-rounded py-1 px-2"
             >
-            <span id="fit-cultural"><i class="fa-solid fa-circle"></i></span>Fit cultural
+            <span id="fit-cultural"><i class="fa-solid fa-circle"></i></span>
+            <span>Fit cultural</span>
             </li>
             <li
             data-filter
             id="entrevista"
             class="filter-tab btn btn-dark text-info filter-rounded py-1 px-2"
             >
-            <span><i class="fa-solid fa-circle"></i></span>Entrevista
+            <span><i class="fa-solid fa-circle"></i></span>
+            <span>Entrevista</span>
             </li>
             <li 
             data-filter
@@ -45,21 +49,24 @@ function create_table_view_filters() {
             style="color: darkorange!important;"
             class="filter-tab btn btn-dark text-info filter-rounded py-1 px-2"
             >
-            <span><i class="fa-solid fa-circle"></i></span>Exame prático
+            <span><i class="fa-solid fa-circle"></i></span>
+            <span>Exame prático</span>
             </li>
             <li
             data-filter
             id="reprovado"
             class="filter-tab btn btn-dark text-danger filter-rounded py-1 px-2"
             >
-            <span><i class="fa-solid fa-circle"></i></span>Reprovado
+            <span><i class="fa-solid fa-circle"></i></span>
+            <span>Reprovado</span>
             </li>
             <li
             data-filter
             id="aprovado"
             class="filter-tab btn btn-dark text-success filter-rounded py-1 px-2"
             >
-            <span><i class="fa-solid fa-circle"></i></span>Aprovado
+            <span><i class="fa-solid fa-circle"></i></span>
+            <span>Aprovado</span>
             </li>
         </ul>
         </div>
@@ -76,12 +83,12 @@ function create_table_view_filters() {
     </div>
     `;
 
-  if (
-    window.screen.width > 999 &&
-    window.location.href == `${window.location.origin}/`
-  ) {
+  // if (
+  //   window.screen.width > 999 &&
+  //   window.location.href == `${window.location.origin}/`
+  // ) {
     navigation_container.append(filters);
-  }
+  // }
 }
 
 function filter_vagas(filter) {
@@ -99,5 +106,4 @@ $("[data-filter]").each(function () {
 $('#search-vaga').keyup(function() {
     $("tbody").html("");
     filters.buscar($(this).val())
-    console.log($(this).val())
 })

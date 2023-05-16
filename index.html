@@ -30,15 +30,25 @@
   <!-- Controllers -->
   <script type="module" src="./app/Controllers/ToolbarController.js"></script>
   <script type="module" src="./app/Controllers/FiltersController.js"></script>
+
   <!-- Templates -->
   <script type="module" src="./template/pages/home.js"></script>
-  <script type="module" src="./template/parts/toolbar.js"></script>
+  <script type="module" src="./template/pages/new-vaga.js"></script>
+  <script type="module" src="./template/pages/reports.js"></script>
+  <script type="module" src="./template/pages/favorites.js"></script>
+  <script type="module" src="./template/pages/trashcan.js"></script>
 
   <!-- Template parts -->
   <script type="module" src="./template/parts/header.js"></script>
   <script type="module" src="./template/parts/topbar.js"></script>
+  <script type="module" src="./template/parts/toolbar.js"></script>
   <script type="module" src="./template/parts/filters.js"></script>
   <script type="module" src="./template/parts/footer.js"></script>
+
+  <!-- Template modals -->
+  <script type="module" src="./template/modals/edit_modal.js"></script>
+  <script type="module" src="./template/modals/fast_add_modal.js"></script>
+  <script type="module" src="./template/modals/add_link_modal.js"></script>
 
   <head></head>
 
@@ -51,10 +61,9 @@
         <div id="toolbar" class="row d-flex"></div>
       </div>
 
-      <div class="row d-flex" id="mo-content">
-        <!-- Conteúdo renderizado -->
-        <div id="content">
-          
+      <div class="row d-flex" id="mo-content">        
+        <div id="content">        
+
         </div>
       </div>
     </div>

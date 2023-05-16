@@ -29,9 +29,12 @@ export class Vagas {
 
   get_favorites() {
     let vagas = this.get_vagas();
+    let vagas_favoritas = Array();
     vagas.forEach((vaga) => {
-      vaga.is_favorite == "true" ? console.log(vaga) : false;
+      vaga.is_favorite == "true" ? vagas_favoritas.push(vaga) : false;
     });
+
+    return vagas_favoritas;
   }
 
   update(vagas) {

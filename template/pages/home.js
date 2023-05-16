@@ -4,9 +4,17 @@ let data_vagas = new Vagas();
 let minhas_vagas = data_vagas.get_vagas();
 minhas_vagas = minhas_vagas.reverse();
 
-createHomePage(minhas_vagas);
+createTableView(minhas_vagas);
 
-function createHomePage(minhas_vagas) {
+$(document).ready(function () {
+//   if (! $("#home").hasClass("selected")) {
+    $("#home").click(() => {
+      createTableView(minhas_vagas);
+    });
+//   }
+});
+
+function createTableView(minhas_vagas) {
   table();
 
   minhas_vagas.forEach((vaga) => {
@@ -45,7 +53,7 @@ function table() {
         </table>
         `;
 
-  $("#content").append(table);
+  $("#content").html(table);
 }
 
 function table_row(vaga) {
@@ -78,4 +86,4 @@ function table_row(vaga) {
   $("tbody").append(row);
 }
 
-export {table_row};
+export { createTableView, table, table_row };
