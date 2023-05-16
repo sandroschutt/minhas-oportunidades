@@ -1,12 +1,14 @@
-/* edit modal */
 #editModal .modal-content,
 #fastAddModal .modal-content,
 #addLinkModal .modal-content {
     background-color: #222222;
 }
 
-#editModal select,
 #editModal input,
+#addLinkModal input,
+#fastAddModal input,
+#editModal select,
+#fastAddModal select,
 #editModal textarea {
     width: 100%;
     display: block;

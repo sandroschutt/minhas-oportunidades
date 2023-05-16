@@ -1,10 +1,10 @@
-import Vagas from "../../src/classes/Vagas/Vagas.js";
+import {Vagas} from "../../src/classes/Vagas/Vagas.js";
 
 export class Toolbar {
   // CONJUNTO DE FUNÕES PARA AÇÕES EM MASSA
   init() {
-    let vagas_selecionadas = Array();
     let vaga_selecionada = String;
+    let vagas_selecionadas = Array();
 
     // Adiciona evento às checkboxes
     let checkboxes = $("[data-check]");
@@ -52,7 +52,7 @@ export class Toolbar {
         $(this).prop("checked", false);
         deselect_vaga($(this).val());
       });
-    };
+    };;
 
     // CRUD
     // Update

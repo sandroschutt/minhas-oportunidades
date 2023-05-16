@@ -13,7 +13,7 @@ export class Vaga {
         this.is_favorite = is_favorite;
     }
 
-    async insert() {
+    insert() {
         let all_vagas = JSON.parse(localStorage.getItem("vagas"));
         
         let last_index = all_vagas['vagas'].length -1;

@@ -97,8 +97,6 @@ function addNovaVaga() {
       "false"
     );
 
-    console.log(new_vaga);
-
     new_vaga.nome != "" && new_vaga.empresa != ""
       ? new_vaga.insert()
       : missing_required_data();
