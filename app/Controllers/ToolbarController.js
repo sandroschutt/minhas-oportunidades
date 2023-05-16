@@ -64,8 +64,8 @@ export class Toolbar {
       $("#edit-nome").val(vaga.nome);
       $("#edit-empresa").val(vaga.empresa);
       $("#edit-portal").val(vaga.portal);
-      // $('#edit-url').val(vaga.url);
-      // $('#edit-descricao').val(vaga.descricao);
+      $('#edit-url').val(vaga.url);
+      $('#edit-descricao').val(vaga.descricao);
       $("#edit-categoria").val(vaga.categoria);
       $("#edit-data-aplicacao").val(vaga.dataaplicacao);
       $("#edit-data-retorno").val(vaga.dataretorno);

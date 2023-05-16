@@ -1,14 +1,18 @@
 {
-  "vagas" : [
+  "vagas": [
     {
-      "id" : "0",
-      "nome": "teste",
-      "empresa": "empresa teste",
-      "portal": "portal teste",
-      "categoria": "testando",
+      "id": "0",
+      "nome": "Nome da vaga",
+      "empresa": "Empresa",
+      "descricao": "Descrição da sua vaga",
+      "portal": "Portal",
+      "url": "https://",
+      "categoria": "categoria-da-vaga",
       "dataaplicacao": "01/01/1999",
       "dataretorno": "01/01/1999",
-      "status": "aplicado"
+      "status": "aplicado",
+      "is_favorite": "false",
+      "is_trash": "false"
     }
   ]
 }

@@ -1,16 +1,25 @@
-import {Vagas} from '../classes/Vagas/Vagas.js';
+import {Vagas} from '../../src/classes/Vagas/Vagas.js';
 
-localStorage.getItem('vagas') == null ? create_local_json_vagas() : false;
+let has_data = false;
+localStorage.getItem('vagas') == null ? has_data = false : has_data = true;
+
+if(!has_data){
+  create_local_json_vagas();
+}
 
 async function create_local_json_vagas() {
-  let vagas = new Vagas();
-  vagas = vagas.get_model('vagas');
+  let vagas = get_model('vagas');
 
-  let favoritos = { "favs" : [] }
-  let lixeira = { "lixo" : [] }
+  console.log(await vagas)
   
   localStorage.setItem("vagas", JSON.stringify(await vagas));
-  localStorage.setItem("lixeira", JSON.stringify(lixeira));
 
   window.location.reload();
+}
+
+async function get_model(model) {
+  let fetchModel = await fetch(`./src/data/vagas/${model}.json`);
+  let final_model = await fetchModel.json()
+
+  return await final_model;
 }

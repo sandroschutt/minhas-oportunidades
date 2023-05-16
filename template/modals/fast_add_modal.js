@@ -58,15 +58,12 @@ $('#fast-add-button').click(() => {
   let categoria = $('#fast-add-categoria').val();
 
   let vaga = new Vaga(
-    undefined,
     nome,
     empresa,
+    '',
     'linkedin',
     categoria,
-    today,
-    undefined,
-    'aplicado',
-    'false'
+    today
     )
   
   vaga.insert();

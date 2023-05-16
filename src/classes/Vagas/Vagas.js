@@ -1,11 +1,4 @@
 export class Vagas {
-  async get_model(model) {
-    let fetchModel = await fetch(`./src/data/vagas/${model}.json`);
-    let final_model = await fetchModel.json();
-
-    return await final_model;
-  }
-
   get_vagas() {
     let minhas_vagas = JSON.parse(localStorage.getItem("vagas"));
     minhas_vagas = minhas_vagas["vagas"];

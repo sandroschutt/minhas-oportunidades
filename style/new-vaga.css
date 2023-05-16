@@ -20,6 +20,10 @@
   margin-bottom: 15px;
 }
 
+.form-new-vaga textarea {
+  min-height: 350px;
+}
+
 button {
   margin: 25px 0;
 }

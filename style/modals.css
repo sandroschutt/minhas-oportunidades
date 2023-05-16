@@ -1,14 +1,18 @@
 #editModal .modal-content,
 #fastAddModal .modal-content,
-#addLinkModal .modal-content {
+#addLinkModal .modal-content,
+#exportModal .modal-content,
+#importModal .modal-content {
     background-color: #222222;
 }
 
 #editModal input,
 #addLinkModal input,
 #fastAddModal input,
+#importModal input,
 #editModal select,
 #fastAddModal select,
+#exportModal select,
 #editModal textarea {
     width: 100%;
     display: block;

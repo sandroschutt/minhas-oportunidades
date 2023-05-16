@@ -1,32 +1,39 @@
 import {Vagas} from '../Vagas/Vagas.js'
 
 export class Vaga {
-    constructor(id, nome, empresa, portal, categoria, dataaplicacao, dataretorno, status, is_favorite){
-        this.id = id;
+    constructor(nome = String, empresa  = String, descricao  = String, portal  = String, categoria  = String, dataaplicacao  = String){
+        this.id = '';
         this.nome = nome;
         this.empresa = empresa;
+        this.descricao = descricao;
+        this.url = 'https://';
         this.portal = portal;
         this.categoria = categoria;
         this.dataaplicacao = dataaplicacao;
-        this.dataretorno = dataretorno
-        this.status = status;
-        this.is_favorite = is_favorite;
+        this.dataretorno = '';
+        this.status = 'aplicado';
+        this.is_favorite = "false";
+        this.is_trash = "false";
     }
 
     insert() {
-        let all_vagas = JSON.parse(localStorage.getItem("vagas"));
+        const vgs = new Vagas;
+        let vagas = vgs.get_vagas();
         
-        let last_index = all_vagas['vagas'].length -1;
-        let id = parseInt(all_vagas['vagas'][last_index].id) + 1;
+        let id = parseInt(vagas[0].id) + 1;
+        console.log(`
+            index: ${vagas[0].id}\n
+            id: ${id}
+        `)
         id = id.toString();
         this.id = id;
 
-        all_vagas.vagas.unshift(this);
+        vagas.unshift(this);
 
-        localStorage.setItem("vagas", JSON.stringify(all_vagas));
+        vgs.update(vagas)
 
-        alert('Vaga adicionada com sucesso!');
+        // alert('Vaga adicionada com sucesso!');
 
-        window.location.href = './';
+        // window.location.href = './';
     }
 }

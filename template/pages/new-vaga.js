@@ -7,8 +7,7 @@ let form_new_vaga = `
   class="form-control-sm bg-dark text-secondary border border-0" type="text" name="nome" id="nome" />
 
 <label for="empresa">Empresa</label>
-<input
-  class="form-control-sm bg-dark text-secondary border border-0" type="text" name="empresa" id="empresa" />
+<input class="form-control-sm bg-dark text-secondary border border-0" type="text" name="empresa" id="empresa" />
 
 <label for="portal">Portal</label>
 <select class="form-control-sm bg-dark text-secondary border border-0" name="portal" id="portal">
@@ -16,6 +15,16 @@ let form_new_vaga = `
   <option value="gupy">gupy</option>
   <option value="email">email</option>
 </select>
+
+<div class="form-group">
+  <label for="url" class="col-form-label">URL:</label>
+  <input type="text" class="form-control-sm bg-dark text-secondary border border-0" id="url">
+</div>
+
+<div class="form-group">
+  <label for="descricao" class="col-form-label">Descricao:</label>
+  <textarea class="form-control bg-dark text-secondary border border-0" id="descricao"></textarea>
+</div>
 
 <label for="categoria">Categoria</label>
 <select class="form-control-sm bg-dark text-secondary border border-0" name="categoria" id="categoria">
@@ -41,25 +50,6 @@ let form_new_vaga = `
   id="data-aplicacao"
 />
 
-<label for="data-retorno">Data de retorno</label>
-<input
-  class="form-control-sm bg-dark text-secondary border border-0"
-  type="date"
-  placeholder="dd-mm-yyyy"
-  name="data-retorno"
-  id="data-retorno"
-/>
-
-<label class="form-label" for="status">Status</label>
-<select class="form-control-sm bg-dark text-secondary border border-0" name="status" id="status">
-  <option value="aplicado">Aplicado</option>
-  <option value="fit-cultural">Fit cultural</option>
-  <option value="exame-tecnico">Teste técnico</option>
-  <option value="entrevista">Entrevista</option>
-  <option value="reprovado">Reprovado</option>
-  <option value="aprovado">Aprovado</option>
-</select>
-
 <button type="button" id="save-new-vaga" class="btn btn-success">Adicionar</button>
 </div>
 `;
@@ -78,23 +68,19 @@ function addNovaVaga() {
     let new_vaga_values = {
       nome: $("#nome").val(),
       empresa: $("#empresa").val(),
+      descricao: $("#descricao").val(),
       portal: $("#portal").val(),
       categoria: $("#categoria").val(),
       "data-aplicacao": $("#data-aplicacao").val(),
-      "data-retorno": $("#data-retorno").val(),
-      status: $("#status").val(),
     };
 
     let new_vaga = new Vaga(
-      "id",
       new_vaga_values.nome,
       new_vaga_values.empresa,
+      new_vaga_values.descricao,
       new_vaga_values.portal,
       new_vaga_values.categoria,
       new_vaga_values["data-aplicacao"],
-      new_vaga_values["data-retorno"],
-      new_vaga_values.status,
-      "false"
     );
 
     new_vaga.nome != "" && new_vaga.empresa != ""

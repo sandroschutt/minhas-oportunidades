@@ -1,8 +1,6 @@
 import { Vagas } from "../../src/classes/Vagas/Vagas.js";
 
-let data_vagas = new Vagas();
-let minhas_vagas = data_vagas.get_vagas();
-minhas_vagas = minhas_vagas.reverse();
+let minhas_vagas = new Vagas().get_vagas();
 
 createTableView(minhas_vagas);
 
