@@ -1,4 +1,6 @@
-import {Vagas} from "../../src/classes/Vagas/Vagas.js";
+import { Vagas } from "../../src/classes/Vagas/Vagas.js";
+import { createTableView } from "../../template/pages/home.js";
+import { createFavoritesTableView } from '../../template/pages/favorites.js'
 
 export class Toolbar {
   // CONJUNTO DE FUNÕES PARA AÇÕES EM MASSA
@@ -54,7 +56,14 @@ export class Toolbar {
       });
     };;
 
-    // CRUD
+    // BUTTON FUNCTIONS
+    // Home
+    $("#home").click(() => {
+      let vagas = new Vagas().get_vagas();
+      createTableView(vagas);
+      this.init();
+    });
+
     // Update
     $("#edit").on("click", function (event) {
       event.preventDefault();
@@ -115,11 +124,24 @@ export class Toolbar {
     // favorite
     $("#favorite").on("click", (event) => {
       event.preventDefault();
-      let vaga = new Vagas();
 
       vagas_selecionadas.length > 1
         ? vaga.bulk_favorite(vagas_selecionadas)
         : vaga.favorite(vaga_selecionada);
+    });
+
+    $("#favs").click(() => {
+      const vagas = new Vagas().get_favorites();
+      if ($("table").html() != undefined) {
+        $("tbody").html("");
+        createFavoritesTableView(vagas);
+      } else {
+        $("#content").html("");
+        table();
+        createFavoritesTableView(vagas);
+      }
+
+      this.init();
     });
   }
 }

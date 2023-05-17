@@ -1,4 +1,4 @@
-import {Toolbar} from '../../app/Controllers/ToolbarController.js'
+import { Toolbar } from "../../app/Controllers/ToolbarController.js";
 
 let toolbar = `
     <div class="col-md-2 col-lg-2" id="toolbar-vagas">
@@ -48,8 +48,9 @@ let toolbar = `
     </div>
 `;
 
-$('#toolbar').html(toolbar)
+$("#toolbar").html(toolbar);
 
-const tb_functions = new Toolbar();
-tb_functions.init();
-
+$(document).ready(function () {
+  const tb_functions = new Toolbar();
+  tb_functions.init();
+});

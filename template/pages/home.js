@@ -1,15 +1,10 @@
 import { Vagas } from "../../src/classes/Vagas/Vagas.js";
+import { Toolbar } from "../../app/Controllers/ToolbarController.js";
 
 let minhas_vagas = new Vagas().get_vagas();
 
-createTableView(minhas_vagas);
-
 $(document).ready(function () {
-//   if (! $("#home").hasClass("selected")) {
-    $("#home").click(() => {
-      createTableView(minhas_vagas);
-    });
-//   }
+  createTableView(minhas_vagas);
 });
 
 function createTableView(minhas_vagas) {

@@ -2,8 +2,6 @@ import { Filters } from "../../app/Controllers/FiltersController.js";
 
 const filters = new Filters();
 
-create_table_view_filters();
-
 function create_table_view_filters() {
   let navigation_container = $("#navigation-container");
 
@@ -83,24 +81,22 @@ function create_table_view_filters() {
         </div>
     </div>
     `;
-
-  // if (
-  //   window.screen.width > 999 &&
-  //   window.location.href == `${window.location.origin}/`
-  // ) {
-    navigation_container.append(filters);
-  // }
+  navigation_container.append(filters);
 }
 
-$("[data-filter]").each(function () {
-  $(this).click(() => {;
-    filters.filtrar($(this).attr("id"))
-  });
-  
-  $(this).append(filters.count($(this).attr('id')));
-});
+$(document).ready(() => {
+  create_table_view_filters();
 
-$('#search-vaga').keyup(function() {
+  $("[data-filter]").each(function () {
+    $(this).click(() => {
+      filters.filtrar($(this).attr("id"));
+    });
+
+    $(this).append(filters.count($(this).attr("id")));
+  });
+
+  $("#search-vaga").keyup(function () {
     $("tbody").html("");
-    filters.buscar($(this).val())
-})
+    filters.buscar($(this).val());
+  });
+});
