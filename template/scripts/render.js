@@ -4,7 +4,7 @@ import { edit } from "../views/edit.js";
 import { add_edit_event } from "../../app/Controllers/EditController.js";
 import { newVaga } from "../views/new.js";
 import { addNewVaga } from "../../app/Controllers/NewVagaController.js";
-import { singleView } from "../views/single.js";
+import { singleView, descricao, formatDate } from "../views/single.js";
 import { trashItems, trashView } from "../views/trash.js";
 import { TrashCan } from "../../app/Controllers/TrashcanController.js";
 
@@ -26,6 +26,9 @@ export function render(view = String, id = null) {
 
     case "single":
       $("#content").html(singleView(vaga));
+      descricao(vaga.id);
+      formatDate(vaga.dataaplicacao, $('.data-aplicacao'))
+      vaga.dataretorno == '' ? false : formatDate(vaga.dataretorno, $('.data-retorno'));
       break;
 
     case "new":
