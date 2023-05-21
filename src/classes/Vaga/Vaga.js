@@ -1,12 +1,12 @@
 import {Vagas} from '../Vagas/Vagas.js'
 
 export class Vaga {
-    constructor(nome = String, empresa  = String, descricao  = String, portal  = String, categoria  = String, dataaplicacao  = String){
+    constructor(nome = String, empresa  = String, descricao  = String, portal  = String, categoria  = String, dataaplicacao  = String, url = String){
         this.id = '';
         this.nome = nome;
         this.empresa = empresa;
         this.descricao = descricao;
-        this.url = 'https://';
+        this.url = url;
         this.portal = portal;
         this.categoria = categoria;
         this.dataaplicacao = dataaplicacao;

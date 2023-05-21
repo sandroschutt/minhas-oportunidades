@@ -1,9 +1,14 @@
 body {
   background-color: #282828;
+  min-height: 100vh;
 }
 
 label {
   font-weight: bold;
+}
+
+.bg-grey {
+  background-color: #5D6062;
 }
 
 #main-navigation-desktop {
@@ -54,4 +59,139 @@ label {
 
 .dropdown-menu {
   background-color: rgb(27, 27, 27);
+}
+
+/* MOBILE */
+/* topbar */
+header {
+  background-color: #282828;
+  position: sticky;
+  z-index: 1;
+  top: 0;
+}
+
+#fluid-navigation {
+  border-bottom: 1px solid #5d6062;
+  /* padding: 2% 0%; */
+}
+
+#fluid-navigation.row {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+#fluid-navigation .col-1,
+#fluid-navigation .col-11 {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+#fluid-navigation i {
+  color: #5d6062;
+  font-size: 20px;
+  padding: 10px 15px;
+}
+
+/* filters */
+#filter-tabs {
+  padding: 2% 0;
+  border-bottom: 1px solid #5d6062;
+}
+
+#filter-tabs select {
+  background: none!important;
+  max-width: 30%;
+}
+
+#filter-tabs select option {
+  background-color: #282828;
+}
+
+#filter-tabs select option:checked {
+  background-color: black!important
+}
+
+#filter-tabs .divider {
+  font-size: 20px;
+}
+
+/* listview */
+#list-mobile {
+  margin: 7%;
+  color: #5d6062;
+}
+
+.card {
+  background-color: #282828;
+  border: none;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.card .heading {
+  border-bottom: 0.5px solid #5d6062;
+  padding-bottom: 10px;
+}
+
+.vaga-mobile {
+  white-space: nowrap;
+}
+
+.vaga-mobile .vaga-nome-mobile {
+  display: inline-block;
+  width: 85%;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.fa-circle {
+  font-size: 12px;
+}
+
+.fa-file {
+  font-size: 1rem;
+  margin: 0 2%;
+}
+
+.card .preview-info,
+.card .descricao,
+.card .actions {
+  padding: 0 8.5%!important;
+}
+
+.card .preview-info {
+  font-size: 15px;
+  margin: 10px 0 15px;
+}
+
+.card .preview-info p {
+  margin-bottom: 3px;
+}
+
+.card .descricao p {
+  font-size: 13px;
+}
+
+.card .actions {
+  margin-bottom: 20px;
+}
+
+.card .actions {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.card .actions .options span {
+  margin-right: 10px;
+}
+
+/* navbar */
+footer {
+  background-color: #282828;
+  position: sticky;
+  bottom: 0;
+}
+
+footer img {
+  max-height: 30px;
 }

@@ -27,44 +27,36 @@
   <script type="module" src="./src/classes/Vagas/Vagas.js"></script>
   <script type="module" src="./src/classes/Vaga/Vaga.js"></script>
 
-  <!-- Controllers -->
-  <script type="module" src="./app/Controllers/ToolbarController.js"></script>
-  <script type="module" src="./app/Controllers/FiltersController.js"></script>
-
-  <!-- Templates -->
-  <script type="module" src="./template/pages/home.js"></script>
-  <script type="module" src="./template/pages/new-vaga.js"></script>
-  <script type="module" src="./template/pages/reports.js"></script>
-  <script type="module" src="./template/pages/favorites.js"></script>
-  <script type="module" src="./template/pages/trashcan.js"></script>
+  <!-- Views -->
+  <script type="module" src="./template/views/home.js"></script>
+  <script type="module" src="./template/views/edit.js"></script>
+  <script type="module" src="./template/views/trash.js"></script>
 
   <!-- Template parts -->
   <script type="module" src="./template/parts/header.js"></script>
-  <script type="module" src="./template/parts/topbar.js"></script>
-  <script type="module" src="./template/parts/toolbar.js"></script>
   <script type="module" src="./template/parts/filters.js"></script>
+
+  <!-- Modals -->
+  <script type="module" src="./template/modals/topbar/import_modal.js"></script>
+  <script type="module" src="./template/modals/topbar/export_modal.js"></script>
+
+  <!-- mobile -->
+  <script type="module" src="./template/parts/topnavbar.js"></script>
   <script type="module" src="./template/parts/footer.js"></script>
 
-  <!-- Template modals -->
-  <!-- topbar -->
-  <script type="module" src="./template/modals/topbar/export_modal.js"></script>
-  <script type="module" src="./template/modals/topbar/import_modal.js"></script>
-
-  <!-- toolbar -->
-  <script type="module" src="./template/modals/edit_modal.js"></script>
-  <script type="module" src="./template/modals/fast_add_modal.js"></script>
-  <script type="module" src="./template/modals/add_link_modal.js"></script>
+  <!-- Scripts -->
+  <script type="module" src="./template/scripts/render.js"></script>
 
   <head></head>
 
   <body>
     <div id="mo-main-content">
       <!-- Navigation -->
-      <div id="navigation-container">
-        <nav></nav>
-
-        <div id="toolbar" class="row d-flex"></div>
-      </div>
+      <header>
+        <div id="navigation-container">
+          
+        </div>
+      </header>
 
       <div class="row d-flex" id="mo-content">
         <div id="content"></div>

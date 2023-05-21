@@ -67,20 +67,10 @@ export class Vagas {
     let vagas = this.get_vagas();
     vagas.forEach((vaga) => {
       if (vaga.id == id) {
-        let index = this.index(id);
-        vagas.splice(index, 1);
+        vaga.is_trash = "true";
+        let index = this.index(vaga.id)
+        vagas.splice(index, 1)
       }
-    });
-
-    this.update(vagas);
-  }
-
-  bulk_delete(ids = Array) {
-    let vagas = this.get_vagas();
-
-    ids.forEach((id) => {
-      let index = this.index(id);
-      vagas.splice(index, 1);
     });
 
     this.update(vagas);
@@ -93,12 +83,6 @@ export class Vagas {
       ? (vagas[index].is_favorite = "false")
       : (vagas[index].is_favorite = "true");
     this.update(vagas);
-  }
-
-  bulk_favorite(ids = Array) {
-    ids.forEach((id) => {
-      this.favorite(id);
-    });
   }
 }
 

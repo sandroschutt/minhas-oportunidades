@@ -1,26 +1,19 @@
 import { Vagas } from "../../src/classes/Vagas/Vagas.js";
-import { table_row } from "../../template/pages/home.js";
-import { Toolbar } from "./ToolbarController.js";
+import { homeContainer, novaVaga } from "../../template/views/home.js";
 
 export class Filters {
-  filtrar(filtro = String) {
-    $("tbody").html("");
+  filter(filtro = String) {
+    $("#content").html("");
+    homeContainer();
 
     let vagas = new Vagas();
     vagas = vagas.get_vagas();
 
-    if (filtro != "todas") {
-      vagas.forEach((vaga) => {
-        vaga.status == filtro ? table_row(vaga) : false;
-      });
-    } else {
-      vagas.forEach((vaga) => {
-        table_row(vaga);
-      });
-    }
-
-    const tb_functions = new Toolbar();
-    tb_functions.init();
+    vagas.forEach((vaga) => {
+      if(vaga.status == filtro || vaga.categoria == filtro || vaga.portal == filtro && vaga.is_trash == "false"){
+        novaVaga(vaga)
+      }
+    });
   }
 
   buscar(busca) {

@@ -1,0 +1,56 @@
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: -100vw;
+  /*Initialposition-hidden*/width: 100vw;
+  height: 100vh;
+  background-color: #333;
+  color: #fff;
+  z-index: 1;
+  transition: left 0.3s ease;
+  -webkit-transition: left 0.3s ease;
+  -moz-transition: left 0.3s ease;
+  -ms-transition: left 0.3s ease;
+  -o-transition: left 0.3s ease;
+}
+
+.menu {
+  padding: 5% 10%;
+  list-style: none;
+  color: #898d8f;
+}
+
+.menu li {
+    margin-bottom: 60px!important;
+}
+
+.menu h5 {
+    border-bottom: 1px solid #5D6062;
+    padding-bottom: 3%;
+}
+
+.menu-icon-inside {
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    cursor: pointer;
+    height: 60px;
+}
+
+.menu li {
+  margin-bottom: 10px;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu-container.open {
+  left: 0; /* Slide menu in from left */
+}
+
+.menu.theme {
+    position: absolute;
+    bottom: 0;
+}
