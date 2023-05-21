@@ -1,4 +1,4 @@
-import Vagas from "../../src/classes/Vagas/Vagas.js";
+import Vagas from "../../src/classes/Vagas.js";
 
 export class TrashCan extends Vagas {
     restore(id = String) {

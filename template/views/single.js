@@ -1,8 +1,8 @@
-import Vagas from "../../src/classes/Vagas/Vagas.js";
+import Vagas from "../../src/classes/Vagas.js";
 
 export function singleView(vaga = Object.JSON) {
   let single = `
-        <div id="header-edit" class="single">
+        <div id="header" class="single">
             <h2><strong>${vaga.nome}</strong></h2>
             <div class="vaga-sub-header">
                 <span>${vaga.empresa} |</span>
@@ -27,7 +27,7 @@ export function singleView(vaga = Object.JSON) {
             </div>
         </div>
 
-        <div id="form-edit">
+        <div id="view-container">
             <h3>Descrição</h3>
             <p class="single-descricao"></p>
         </div>

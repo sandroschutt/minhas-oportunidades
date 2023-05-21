@@ -1,4 +1,4 @@
-import { Vagas } from "../../src/classes/Vagas/Vagas.js";
+import { Vagas } from "../../src/classes/Vagas.js";
 import { novaVaga } from "./home.js";
 
 
@@ -15,7 +15,7 @@ export function trashContainer() {
 
 export function trashView() {
     let trashHeader = `
-        <div id="header-edit" class="single" style="margin-bottom: 15%;">
+        <div id="header" class="single" style="margin-bottom: 15%;">
             <h2 style="margin-bottom: 0;"><strong>Lixeira</strong></h2>
             <span class="mr-2 text-secondary">11 Vagas</span>
             <span id="empty-trash" class="text-danger text-right">Esvaziar lixeira</span>

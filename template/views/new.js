@@ -1,10 +1,10 @@
 export function newVaga() {
     let new_vaga = `
-    <div id="header-edit">
+    <div id="header">
     <h2>Nova vaga</h2>
     </div>
 
-    <form id="form-edit">
+    <form id="view-container">
         <div class="">
             <label for="nome" class="">Nome:</label>
             <input type="text" class="" id="nome" value="">

@@ -1,5 +1,5 @@
-import { Vagas } from "../../src/classes/Vagas/Vagas.js";
-import { render } from "../../template/scripts/render.js";
+import { Vagas } from "../../src/classes/Vagas.js";
+import { render } from "../render.js";
 
 export class Home {
     // CONTROLA TODAS AS FUNCIONALIDADES DA HOME
