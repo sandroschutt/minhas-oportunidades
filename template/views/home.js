@@ -108,14 +108,14 @@ export function novaVaga(vaga) {
         </div>
 
         <div class="actions row">
-            <div class="col">
-            <span class="edit edit-${identifier}"><i class="fa-solid fa-pen-to-square"></i></span>
-            <span class="favorite favorite-${identifier}"><i class="fa-solid fa-star"></i></span>
-            <span class="delete delete-${identifier}"><i class="fa-solid fa-trash-can"></i></span>
+            <div class="col basic-actions">
+              <span class="edit edit-${identifier}"><i class="fa-solid fa-pen-to-square"></i></span>
+              <span class="favorite favorite-${identifier}"><i class="fa-solid fa-star"></i></span>
+              <span class="delete delete-${identifier}"><i class="fa-solid fa-trash-can"></i></span>
             </div>
 
             <div class="col text-right">
-            <span class="visit visit-${identifier}"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              <span class="visit visit-${identifier}"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
             </div>
         </div>
         </div>

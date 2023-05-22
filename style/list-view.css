@@ -1,18 +1,18 @@
 /* listview */
 #list-mobile {
   margin: 7%;
-  color: #5d6062;
+  color: #979a9c;
 }
 
 .card {
-  background-color: #282828;
+  background-color: #000000;
   border: none;
   margin-bottom: 25px;
   overflow: hidden;
 }
 
 .card .heading {
-  border-bottom: 0.5px solid #5d6062;
+  border-bottom: 0.5px solid #979a9c;
   padding-bottom: 10px;
 }
 
@@ -66,4 +66,8 @@
 
 .card .actions .options span {
   margin-right: 10px;
+}
+
+.basic-actions span {
+  margin-right: 15px;
 }

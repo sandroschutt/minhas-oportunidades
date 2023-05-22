@@ -21,13 +21,6 @@ let footer = `
         />
       </div>
 
-      <div class="text-center" id="favorites">
-        <img
-          src="./resources/icons/bookmark-svgrepo-com.svg"
-          alt="navbar fast add"
-        />
-      </div>
-
       <div class="text-center">
         <img
           src="./resources/icons/link-3-svgrepo-com.svg"
@@ -46,8 +39,4 @@ $('#home').click(() => {
 
 $('#new').click(() => {
   render('new')
-})
-
-$('#favorites').click(() => {
-  render('favorites')
 })

@@ -1,5 +1,5 @@
 body {
-  background-color: #282828;
+  background-color: #000000;
   min-height: 100vh;
 }
 
@@ -8,7 +8,7 @@ label {
 }
 
 .bg-grey {
-  background-color: #5d6062;
+  background-color: #979a9c;
 }
 
 #mo-content {
@@ -34,7 +34,7 @@ label {
   /*Initialposition-hidden*/
   width: 100vw;
   height: 100vh;
-  background-color: #333;
+  background-color: #000000;
   color: #fff;
   z-index: 1;
   transition: left 0.3s ease;
@@ -55,7 +55,7 @@ label {
 }
 
 .menu h5 {
-  border-bottom: 1px solid #5d6062;
+  border-bottom: 1px solid #979a9c;
   padding-bottom: 3%;
 }
 
@@ -87,14 +87,14 @@ label {
 
 /* topbar */
 header {
-  background-color: #282828;
+  background-color: #000000;
   position: sticky;
   z-index: 1;
   top: 0;
 }
 
 #fluid-navigation {
-  border-bottom: 1px solid #5d6062;
+  border-bottom: 1px solid #979a9c;
   /* padding: 2% 0%; */
 }
 
@@ -110,7 +110,7 @@ header {
 }
 
 #fluid-navigation i {
-  color: #5d6062;
+  color: #979a9c;
   font-size: 20px;
   padding: 10px 15px;
 }
@@ -129,7 +129,7 @@ header {
 }
 
 .search-input input {
-  background-color: #282828;
+  background-color: #000000;
   border: 1px solid grey;
   border-radius: 20px;
   padding: 7px 10px;
@@ -148,7 +148,7 @@ header {
 
 /* navbar */
 footer {
-  background-color: #282828;
+  background-color: #000000;
   position: sticky;
   bottom: 0;
 }
