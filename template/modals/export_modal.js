@@ -33,8 +33,9 @@ $("#mo-content").append(export_modal);
 $("#export-button").click(() => {
   console.log("clicou");
   if ($("#exportar-opcoes").val() == "vagas") {
+    let today = new Date().toJSON().slice(0, 10)
     const vagas = new Vagas().get_vagas();
-    const filename = "data.json";
+    const filename = `mo_bkp_${today}.json`;
     const jsonStr = JSON.stringify(vagas);
 
     let element = document.createElement("a");
