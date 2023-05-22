@@ -7,17 +7,17 @@ export function newVaga() {
     <form id="view-container">
         <div class="">
             <label for="nome" class="">Nome:</label>
-            <input type="text" class="" id="nome" value="">
+            <input type="text" class="" id="new-nome" value="">
         </div>
 
         <div class="form-group">
             <label for="empresa" class="">Empresa:</label>
-            <input type="text" class="" id="empresa" value="">
+            <input type="text" class="" id="new-empresa" value="">
         </div>
 
         <div class="">
             <label for="portal" class="">Portal:</label>
-            <select class="" id="portal" value="">
+            <select class="" id="new-portal">
             <option value="linkedin">linkedin</option>
             <option value="gupy">gupy</option>
             <option value="email">email</option>
@@ -26,17 +26,17 @@ export function newVaga() {
 
         <div class="">
             <label for="url" class="">URL:</label>
-            <input type="text" class="" id="url" value="">
+            <input type="text" class="" id="new-url" value="">
         </div>
 
         <div class="">
             <label for="descricao" class="">Descricao:</label>
-            <textarea class="" id="descricao"></textarea>
+            <textarea class="" id="new-descricao"></textarea>
         </div>
 
         <div class="">
             <label for="categoria" class="">Categoria:</label>
-            <select class="" id="categoria" value="">
+            <select class="" id="new-categoria">
                 <option value="front-end">front-end</option>
                 <option value="front-end-pleno">front-end-pleno</option>
                 <option value="front-end-senior">front-end-senior</option>
@@ -46,6 +46,8 @@ export function newVaga() {
                 <option value="fullstack">fullstack</option>
                 <option value="fullstack-pleno">fullstack-pleno</option>
                 <option value="fullstack-senior">fullstack-senior</option>
+                <option value="dev-wordpress">dev-wordpress</option>
+                <option value="dev-web">dev-web</option>
         </select>
         </div>
 
