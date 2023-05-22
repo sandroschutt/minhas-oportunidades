@@ -1,11 +1,11 @@
 export function edit(vaga) {
   let edit = `
-    <div id="header-edit">
+    <div id="header">
         <p>Editando /</p>
         <h2>${vaga.nome}</h2>
     </div>
 
-  <form id="form-edit">
+  <form id="view-container">
   <div class="">
     <label for="edit-nome" class="">Nome:</label>
     <input type="text" class="" id="edit-nome" value="${vaga.nome}">

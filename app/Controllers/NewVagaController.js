@@ -1,4 +1,4 @@
-import { Vaga } from "../../src/classes/Vaga/Vaga.js";
+import { Vaga } from "../../src/classes/Vaga.js";
 
 export function addNewVaga() {
   $("#save-new-vaga").on("click", (event) => {

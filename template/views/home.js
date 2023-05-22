@@ -1,6 +1,6 @@
-import { Vagas } from "../../src/classes/Vagas/Vagas.js";
+import { Vagas } from "../../src/classes/Vagas.js";
 import { Home } from "../../app/Controllers/HomeController.js";
-import { render } from "../scripts/render.js";
+import { render } from "../../app/render.js";
 
 // homeContainer();
 

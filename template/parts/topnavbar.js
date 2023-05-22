@@ -1,4 +1,5 @@
-import { render } from "../scripts/render.js"
+import { render } from "../../app/render.js";
+import { Filters } from "../../app/Controllers/FiltersController.js";
 
 let topnavbar = `
     <nav>
@@ -48,9 +49,12 @@ let topnavbar = `
         </div>
     </div>
     <div class="col-11 text-right">
+        <span class="search-input">
+            <input type="text" placeholder="Search...">
+        </span>
         <!-- ícone de busca -->
-        <span>
-        <i class="fa-solid fa-magnifying-glass"></i>
+        <span class="search-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
         </span>
     </div>
     </div>
@@ -63,19 +67,29 @@ $(document).ready(function () {
   const menuIconOutside = $(".menu-icon-outside");
   const menuIconInside = $(".menu-icon-inside");
 
+  const filters = new Filters();
+
   menuIconInside.click(() => {
     let menu = $(".menu-container");
-    menu.toggleClass('open');
+    menu.toggleClass("open");
   });
 
   menuIconOutside.click(() => {
     let menu = $(".menu-container");
-    menu.toggleClass('open');
+    menu.toggleClass("open");
   });
 
-  $('#lixeira').click(() => {
-    render('trash');
+  $("#lixeira").click(() => {
+    render("trash");
     let menu = $(".menu-container");
-    menu.toggleClass('open');
+    menu.toggleClass("open");
+  });
+
+  $('.search-icon').click(() => {
+    $('.search-input').toggleClass('open')
+  })
+
+  $('.search-input input').keyup(() => {
+    filters.buscar($('.search-input input').val())
   })
 });

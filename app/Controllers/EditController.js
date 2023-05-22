@@ -1,4 +1,4 @@
-import { Vagas } from '../../src/classes/Vagas/Vagas.js';
+import { Vagas } from '../../src/classes/Vagas.js';
 
 export function get_edited_values() {
   let nome = $("#edit-nome").val();

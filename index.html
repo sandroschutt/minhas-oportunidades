@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <!-- Scripts -->
   <!-- JS do Bootstrap (necessário para alguns plugins do Bootstrap) -->
   <script
@@ -18,18 +18,15 @@
     crossorigin="anonymous"
   ></script>
   <!-- Babel -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.24.0/babel.min.js"></script> -->
 
   <!-- Data -->
-  <script type="module" src="./src/data/load.js"></script>
-
-  <!-- Classes -->
-  <script type="module" src="./src/classes/Vagas.js"></script>
-  <script type="module" src="./src/classes/Vaga/Vaga.js"></script>
+  <script type="module" src="./src/data/autoload.js"></script>
 
   <!-- Views -->
   <script type="module" src="./template/views/home.js"></script>
   <script type="module" src="./template/views/edit.js"></script>
+  <!-- <script type="module" src="./template/views/favorites.js"></script> -->
   <script type="module" src="./template/views/trash.js"></script>
 
   <!-- Template parts -->
@@ -37,15 +34,15 @@
   <script type="module" src="./template/parts/filters.js"></script>
 
   <!-- Modals -->
-  <script type="module" src="./template/modals/topbar/import_modal.js"></script>
-  <script type="module" src="./template/modals/topbar/export_modal.js"></script>
+  <script type="module" src="./template/modals/import_modal.js"></script>
+  <script type="module" src="./template/modals/export_modal.js"></script>
 
   <!-- mobile -->
   <script type="module" src="./template/parts/topnavbar.js"></script>
   <script type="module" src="./template/parts/footer.js"></script>
 
   <!-- Scripts -->
-  <script type="module" src="./template/scripts/render.js"></script>
+  <script type="module" src="./app/render.js"></script>
 
   <head></head>
 

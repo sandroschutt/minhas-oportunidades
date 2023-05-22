@@ -1,0 +1,79 @@
+/* filters */
+#filter-tabs {
+  padding: 2% 0;
+  border-bottom: 1px solid #5d6062;
+}
+
+#filter-tabs select {
+  background: none !important;
+  max-width: 30%;
+}
+
+#filter-tabs select option {
+  background-color: #282828;
+}
+
+#filter-tabs select option:checked {
+  background-color: black !important;
+}
+
+#filter-tabs .divider {
+  font-size: 20px;
+}
+
+#filter-tabs {
+  margin-right: 0;
+  margin-left: 0;
+  background-color: #282828;
+}
+
+#filter-tabs ul,
+#search {
+  padding-left: 0;
+  margin-bottom: 0;
+  padding: 8px 5px;
+}
+
+#search input {
+  padding-left: 8px;
+}
+
+.filter-tab {
+  display: inline;
+  font-size: 12px;
+}
+
+li.filter-tab {
+  margin-right: 10px;
+  font-weight: 600;
+}
+
+li.filter-tab:hover {
+  cursor: pointer;
+}
+
+.filter-tab span {
+  display: inline;
+  margin-right: 3px;
+  font-size: 10px;
+}
+
+.filter-tab i {
+  font-size: 8px !important;
+  margin-right: 5px;
+}
+
+.filter-rounded {
+  border-radius: 15px;
+}
+text-center .yellow-tab {
+  color: darkorange !important;
+}
+
+.yellow-tab:hover {
+  color: orange;
+}
+
+tr[data-id="0"] {
+  display: none;
+}

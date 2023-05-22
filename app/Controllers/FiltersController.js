@@ -1,4 +1,4 @@
-import { Vagas } from "../../src/classes/Vagas/Vagas.js";
+import { Vagas } from "../../src/classes/Vagas.js";
 import { homeContainer, novaVaga } from "../../template/views/home.js";
 
 export class Filters {
@@ -21,7 +21,7 @@ export class Filters {
     vagas.forEach((vaga) => {
       let nome = vaga.nome.toLowerCase();
       let empresa = vaga.empresa.toLowerCase();
-      nome.includes(busca) || empresa.includes(busca) ? table_row(vaga) : false;
+      nome.includes(busca) || empresa.includes(busca) ? console.log(busca) : false;
     });
   }
 
