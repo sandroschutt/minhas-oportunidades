@@ -111,6 +111,7 @@ export function novaVaga(vaga) {
             <div class="col basic-actions">
               <span class="edit edit-${identifier}"><i class="fa-solid fa-pen-to-square"></i></span>
               <span class="favorite favorite-${identifier}"><i class="fa-solid fa-star"></i></span>
+              <span class="link link-${identifier}"><i class="fa-solid fa-link"></i></span>
               <span class="delete delete-${identifier}"><i class="fa-solid fa-trash-can"></i></span>
             </div>
 
@@ -134,6 +135,10 @@ export function add_vaga_events(item, home, vaga, identifier = null) {
 
   $(`.favorite-${identifier}`).click(() => {
     home.favorite(vaga.id);
+  });
+
+  $(`.link-${identifier}`).click(() => {
+    window.open(vaga.url, '_blank');
   });
 
   $(`.delete-${identifier}`).click(() => {

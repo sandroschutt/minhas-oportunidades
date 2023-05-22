@@ -67,6 +67,12 @@
   padding-bottom: 0 !important;
 }
 
+.vaga-sub-header span.link {
+  margin-left: 20px;
+  font-size: 15px!important;
+  cursor: pointer;
+}
+
 .vaga-info {
   margin: 30px 0 15px;
 }
@@ -81,6 +87,10 @@
 
 .info i {
   margin-right: 5px;
+}
+
+.info .link {
+  margin-left: 20px;
 }
 
 .info i,

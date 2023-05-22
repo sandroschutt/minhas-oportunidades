@@ -7,6 +7,7 @@ export function singleView(vaga = Object.JSON) {
             <div class="vaga-sub-header">
                 <span>${vaga.empresa} |</span>
                 <span>Remoto</span>
+                <span class="link text-primary"><i class="fa-solid fa-link text-primary"></i>link</span>
             </div>
 
             <div class="vaga-info">
@@ -34,6 +35,12 @@ export function singleView(vaga = Object.JSON) {
     `;
 
   return single;
+}
+
+export function add_single_events(vaga) {
+  $('.link').click(() => {
+    window.open(vaga.url, '_blank');
+  })
 }
 
 export function descricao(id = String) {
