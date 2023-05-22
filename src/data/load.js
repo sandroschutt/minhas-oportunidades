@@ -1,4 +1,4 @@
-import {Vagas} from '../../src/classes/Vagas/Vagas.js';
+import {Vagas} from '../../src/classes/Vagas.js';
 
 let has_data = false;
 localStorage.getItem('vagas') == null ? has_data = false : has_data = true;

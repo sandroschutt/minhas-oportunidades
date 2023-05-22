@@ -1,4 +1,4 @@
-import { Vagas } from "../../../src/classes/Vagas/Vagas.js";
+import { Vagas } from "../../../src/classes/Vagas.js";
 
 let export_modal = `
 <!-- Modal -->

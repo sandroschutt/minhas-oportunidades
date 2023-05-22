@@ -1,4 +1,4 @@
-import { Vagas } from "../../src/classes/Vagas/Vagas.js";
+import { Vagas } from "../../src/classes/Vagas.js";
 import { homeContainer, homeView } from "../views/home.js";
 import { edit } from "../views/edit.js";
 import { add_edit_event } from "../../app/Controllers/EditController.js";

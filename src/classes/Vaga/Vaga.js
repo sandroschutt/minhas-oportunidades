@@ -1,4 +1,4 @@
-import {Vagas} from '../Vagas/Vagas.js'
+import {Vagas} from '../Vagas.js'
 
 export class Vaga {
     constructor(nome = String, empresa  = String, descricao  = String, portal  = String, categoria  = String, dataaplicacao  = String, url = String){
