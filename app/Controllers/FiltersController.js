@@ -18,10 +18,16 @@ export class Filters {
 
   buscar(busca) {
     let vagas = new Vagas().get_vagas();
+    
+    homeContainer();
+    
     vagas.forEach((vaga) => {
       let nome = vaga.nome.toLowerCase();
       let empresa = vaga.empresa.toLowerCase();
-      nome.includes(busca) || empresa.includes(busca) ? console.log(busca) : false;
+
+      if(nome.includes(busca) || empresa.includes(busca)) {
+        novaVaga(vaga)
+      }
     });
   }
 

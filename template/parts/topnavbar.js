@@ -1,5 +1,6 @@
 import { render } from "../../app/render.js";
 import { Filters } from "../../app/Controllers/FiltersController.js";
+import { homeContainer } from "../views/home.js";
 
 let topnavbar = `
     <nav>
@@ -66,6 +67,7 @@ $("#navigation-container").prepend(topnavbar);
 $(document).ready(function () {
   const menuIconOutside = $(".menu-icon-outside");
   const menuIconInside = $(".menu-icon-inside");
+  const searchInput = $('.search-input input');
 
   const filters = new Filters();
 
@@ -87,9 +89,10 @@ $(document).ready(function () {
 
   $('.search-icon').click(() => {
     $('.search-input').toggleClass('open')
+    searchInput.focus();
   })
 
-  $('.search-input input').keyup(() => {
-    filters.buscar($('.search-input input').val())
+  searchInput.keyup(() => {
+    filters.buscar(searchInput.val())
   })
 });
