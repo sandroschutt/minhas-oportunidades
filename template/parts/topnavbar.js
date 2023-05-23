@@ -35,8 +35,8 @@ let topnavbar = `
                     data-target="#exportModal">
                         Exportar
                     </p>
+                    <p class="lixeira" id="favoritos">Favoritos</p>
                     <p class="lixeira" id="lixeira">Lixeira</p>
-                    <hr class="bg-grey">
                     <p class="configuracoes" id="configuracoes">Configurações</p>
                 </li>
                 <li>
@@ -65,30 +65,47 @@ let topnavbar = `
 $("#navigation-container").prepend(topnavbar);
 
 $(document).ready(function () {
+  const menuContainer = $('.menu-container');
   const menuIconOutside = $(".menu-icon-outside");
   const menuIconInside = $(".menu-icon-inside");
   const searchInput = $('.search-input input');
 
   const filters = new Filters();
 
+  const toggleOpen = (toggleItem = Object.html) => {
+    toggleItem.toggleClass("open");
+  }
+
   menuIconInside.click(() => {
-    let menu = $(".menu-container");
-    menu.toggleClass("open");
+    toggleOpen(menuContainer);
   });
 
   menuIconOutside.click(() => {
-    let menu = $(".menu-container");
-    menu.toggleClass("open");
+    toggleOpen(menuContainer);
   });
 
   $("#lixeira").click(() => {
     render("trash");
-    let menu = $(".menu-container");
-    menu.toggleClass("open");
+    toggleOpen(menuContainer);
   });
 
+  $("#favoritos").click(() => {
+    render("favorites");
+    toggleOpen(menuContainer);
+  });
+
+  $('#configuracoes').click(() => {
+    render('configs');
+    toggleOpen(menuContainer);
+  })
+
+  $('#minhas-oportunidades').click(() => {
+    render('about');
+    toggleOpen(menuContainer);
+  })
+
   $('.search-icon').click(() => {
-    $('.search-input').toggleClass('open')
+    toggleOpen($('.search-input'))
     searchInput.focus();
   })
 

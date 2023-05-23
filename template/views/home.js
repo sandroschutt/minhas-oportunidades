@@ -74,13 +74,16 @@ export function novaVaga(vaga) {
   }
 
   let identifier = parseInt(vaga.id) ** 3 / (25 / 100);
+  let nome = vaga.nome;
+
+  window.screen.width < 900 ? nome = vaga.nome.substring(0, 30) : nome = vaga.nome;
 
   let item = `
     <div class="card">
     <div class="heading" id="heading${identifier}">
         <div class="vaga-mobile" data-toggle="collapse" data-target="#collapse${identifier}" aria-expanded="true" aria-controls="collapse${identifier}">
         <i class="fa-solid fa-file"></i>
-        <span class="vaga-nome-mobile">${vaga.nome.substring(0, 30)}</span>
+        <span class="vaga-nome-mobile">${nome}</span>
         <span>
             <i class="fa-regular fa-circle" style="color: ${status_color}"></i>
         </span>
@@ -103,7 +106,7 @@ export function novaVaga(vaga) {
         <div class="descricao ">
             <h6><strong>Descrição:</strong></h6>
             <p>
-            ${vaga.descricao.substring(0, 150)}...
+            ${vaga.descricao.substring(0, 200)}...
             </p>
         </div>
 
@@ -133,7 +136,16 @@ export function add_vaga_events(item, home, vaga, identifier = null) {
     home.edit(vaga.id);
   });
 
+  let starIconColor = '#979a9c';
+  vaga.is_favorite == "true" ? starIconColor = "yellow" : starIconColor = starIconColor;
+  $(`.favorite-${identifier}`).css('color', starIconColor);
+
+  const setStarIconColor = (color = String) => {
+    $(`.favorite-${identifier}`).css('color', color)
+  };
+
   $(`.favorite-${identifier}`).click(() => {
+    $(`.favorite-${identifier}`).css('color') == "rgb(255, 255, 0)" ? setStarIconColor('#979a9c') : setStarIconColor('yellow');
     home.favorite(vaga.id);
   });
 
