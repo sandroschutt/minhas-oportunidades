@@ -1,4 +1,4 @@
-import { render } from "../../app/render.js";
+import { render, setReferer, lastActions } from "../../app/render.js";
 
 let footer = `
 <footer>
@@ -35,8 +35,10 @@ $('html').append(footer)
 
 $('#home').click(() => {
   render('home')
+  let previousViews = setReferer(lastActions, 'home')
 })
 
 $('#new').click(() => {
   render('new')
+  let previousViews = setReferer(lastActions, 'new');
 })

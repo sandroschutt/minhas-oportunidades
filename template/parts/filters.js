@@ -2,7 +2,7 @@ import { Filters } from "../../app/Controllers/FiltersController.js";
 
 const filters = new Filters();
 
-function filterVagas() {
+export function filterVagas() {
   let navigation_container = $("#navigation-container");
 
   let filters = `
@@ -82,32 +82,30 @@ function filterVagas() {
     </div>
     `;
   navigation_container.append(filters);
+
+  $(document).ready(() => {
+    $("[data-status]").on('change', function(){
+      let filter = new Filters();
+      let status = $(this).val();
+      filter.filter(status)
+    });
+  
+    $('[data-categoria]').on('change', function(){
+      let filter = new Filters();
+      let categoria = $(this).val();
+      filter.filter(categoria)
+    });
+  
+    $('[data-portal]').on('change', function(){
+      let filter = new Filters();
+      let portal = $(this).val();
+      filter.filter(portal)
+    });
+  
+  
+    $("#search-vaga").keyup(function () {
+      $("tbody").html("");
+      filters.buscar($(this).val());
+    });
+  });
 }
-
-$(document).ready(() => {
-  filterVagas();
-
-  $("[data-status]").on('change', function(){
-    let filter = new Filters();
-    let status = $(this).val();
-    filter.filter(status)
-  });
-
-  $('[data-categoria]').on('change', function(){
-    let filter = new Filters();
-    let categoria = $(this).val();
-    filter.filter(categoria)
-  });
-
-  $('[data-portal]').on('change', function(){
-    let filter = new Filters();
-    let portal = $(this).val();
-    filter.filter(portal)
-  });
-
-
-  $("#search-vaga").keyup(function () {
-    $("tbody").html("");
-    filters.buscar($(this).val());
-  });
-});

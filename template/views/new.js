@@ -20,6 +20,8 @@ export function newVaga() {
             <select class="" id="new-portal">
             <option value="linkedin">linkedin</option>
             <option value="gupy">gupy</option>
+            <option value="jobs">jobs</option>
+            <option value="trampos">trampos</option>
             <option value="email">email</option>
             </select>
         </div>

@@ -1,5 +1,8 @@
 import { Vagas } from "../src/classes/Vagas.js";
 import { homeContainer, homeView } from "../template/views/home.js";
+import { topNavbar } from "../template/parts/topnavbar.js";
+import { singleTopNavbar } from "../template/parts/single_topbar.js";
+import { filterVagas } from "../template/parts/filters.js";
 import { edit } from "../template/views/edit.js";
 import { add_edit_event } from "./Controllers/EditController.js";
 import { newVaga } from "../template/views/new.js";
@@ -15,14 +18,20 @@ export function render(view = String, id = null) {
   let vagas = new Vagas().get_vagas();
   let vaga = new Vagas().get_vaga(id);
 
-  let single = ``;
-
-  let new_vaga = ``;
-
-  let trash = ``;
+  let listViews = Array(
+    'single',
+    'edit',
+    'favorites',
+    'trash',
+    'configs',
+    'about'
+  );
 
   switch (view) {
     case "home":
+      hastopNavbar(listViews)
+      $('#filter-tabs').remove()
+      filterVagas();
       homeContainer();
       homeView(vagas);
       break;
@@ -38,21 +47,26 @@ export function render(view = String, id = null) {
       break;
 
     case "new":
+      hastopNavbar(listViews);
+      $('#filter-tabs').remove()
       $("#content").html(newVaga());
       addNewVaga();
       break;
 
     case "edit":
+      singleTopNavbar();
       $("#content").html(edit(vaga));
       add_edit_event(vaga);
       break;
 
     case "favorites":
+      singleTopNavbar();
       $("#content").html(favoritesView());
       favoriteItems();
       break;
 
     case "trash":
+      singleTopNavbar();
       $("#content").html(trashView());
       $("#empty-trash").click(() => {
         let trashcan = new TrashCan();
@@ -62,11 +76,13 @@ export function render(view = String, id = null) {
       break;
 
     case "about":
+      singleTopNavbar();
       aboutContainer();
       $("#content").html(aboutView());
       break;
 
     case "configs":
+      singleTopNavbar();
       configsContainer();
       $("#content").html(configsView());
       break;
@@ -75,3 +91,39 @@ export function render(view = String, id = null) {
       break;
   }
 }
+
+function hastopNavbar(listViews = Array()) {
+  listViews.forEach(view => {
+    if (lastActions.includes(view)) {
+      topNavbar();
+    }
+  })
+}
+
+let lastActions = Array();
+
+export function setReferer(lastActions = Array(), viewName = String) {
+  if (lastActions.length <= 1 && lastActions[0] != viewName) {
+    lastActions.push(viewName)
+  } else if (viewExists(lastActions, viewName)) {
+    lastActions[0] == viewName;
+  } else if (lastActions.length == 2 && !viewExists(lastActions, viewName)) {
+    lastActions.shift()
+    lastActions.push(viewName)
+  }
+
+  return lastActions;
+}
+
+function viewExists(lastActions = Array(), viewName = String) {
+  let exists = false;
+  lastActions[0] == viewName == viewName || lastActions[1] == viewName ? exists = true : exists = false;
+  return exists;
+}
+
+export function goBack(lastActions = Array()) {
+  let lastAction = lastActions[0];
+  return lastAction;
+}
+
+export { lastActions };
