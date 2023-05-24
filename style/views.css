@@ -69,8 +69,13 @@
 
 .vaga-sub-header span.link {
   margin-left: 20px;
-  font-size: 15px!important;
+  font-size: 15px !important;
   cursor: pointer;
+}
+
+.single .basic-actions span i {
+  font-size: 16px !important;
+  padding: 10px 2px !important;
 }
 
 .vaga-info {
@@ -114,4 +119,11 @@
 
 .single-descricao {
   color: #6f7274 !important;
+}
+
+/* Trash */
+.empty-trash {
+  color: red;
+  padding: 0 10px;
+  margin: 10px;
 }

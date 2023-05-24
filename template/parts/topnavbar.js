@@ -65,59 +65,57 @@ export function topNavbar() {
 
   $("#navigation-container").html(topnavbar);
 
-  $(document).ready(function () {
-    const menuContainer = $('.menu-container');
-    const menuIconOutside = $(".menu-icon-outside");
-    const menuIconInside = $(".menu-icon-inside");
-    const searchInput = $('.search-input input');
+  const menuContainer = $('.menu-container');
+  const menuIconOutside = $(".menu-icon-outside");
+  const menuIconInside = $(".menu-icon-inside");
+  const searchInput = $('.search-input input');
 
-    const filters = new Filters();
+  const filters = new Filters();
 
-    const toggleOpen = (toggleItem = Object.html) => {
-      toggleItem.toggleClass("open");
-    }
+  const toggleOpen = (toggleItem = Object.html) => {
+    toggleItem.toggleClass("open");
+  }
 
-    menuIconInside.click(() => {
-      toggleOpen(menuContainer);
-    });
-
-    menuIconOutside.click(() => {
-      toggleOpen(menuContainer);
-    });
-
-    $("#lixeira").click(() => {
-      render("trash");
-      toggleOpen(menuContainer);
-      setReferer(lastActions, 'trash');
-    });
-
-    $("#favoritos").click(() => {
-      render("favorites");
-      toggleOpen(menuContainer);
-      setReferer(lastActions, 'favorites');
-    });
-
-    $('#configuracoes').click(() => {
-      render('configs');
-      toggleOpen(menuContainer);
-      setReferer(lastActions, 'configs');
-    })
-
-    $('#minhas-oportunidades').click(() => {
-      render('about');
-      toggleOpen(menuContainer);
-      setReferer(lastActions, 'about');
-    })
-
-    $('.search-icon').click(() => {
-      toggleOpen($('.search-input'))
-      searchInput.focus();
-    })
-
-    searchInput.keyup(() => {
-      filters.buscar(searchInput.val())
-    })
+  menuIconInside.click(() => {
+    toggleOpen(menuContainer);
   });
+
+  menuIconOutside.click(() => {
+    toggleOpen(menuContainer);
+  });
+
+  $("#lixeira").click(() => {
+    render("trash");
+    toggleOpen(menuContainer);
+    setReferer(lastActions, 'trash');
+  });
+
+  $("#favoritos").click(() => {
+    render("favorites");
+    toggleOpen(menuContainer);
+    setReferer(lastActions, 'favorites');
+  });
+
+  $('#configuracoes').click(() => {
+    render('configs');
+    toggleOpen(menuContainer);
+    setReferer(lastActions, 'configs');
+  })
+
+  $('#minhas-oportunidades').click(() => {
+    render('about');
+    toggleOpen(menuContainer);
+    setReferer(lastActions, 'about');
+  })
+
+  $('.search-icon').click(() => {
+    toggleOpen($('.search-input'))
+    searchInput.focus();
+  })
+
+  searchInput.keyup(() => {
+    filters.buscar(searchInput.val())
+  })
 }
 
 topNavbar();

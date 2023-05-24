@@ -1,7 +1,7 @@
 import { Vagas } from "../src/classes/Vagas.js";
 import { homeContainer, homeView } from "../template/views/home.js";
 import { topNavbar } from "../template/parts/topnavbar.js";
-import { singleTopNavbar } from "../template/parts/single_topbar.js";
+import { singleTopNavbar, add_single_topbar_events } from "../template/parts/single_topbar.js";
 import { filterVagas } from "../template/parts/filters.js";
 import { edit } from "../template/views/edit.js";
 import { add_edit_event } from "./Controllers/EditController.js";
@@ -37,6 +37,8 @@ export function render(view = String, id = null) {
       break;
 
     case "single":
+      singleTopNavbar(view);
+      add_single_topbar_events(vaga.id, vaga.is_favorite)
       $("#content").html(singleView(vaga));
       add_single_events(vaga);
       descricao(vaga.id);
@@ -54,19 +56,22 @@ export function render(view = String, id = null) {
       break;
 
     case "edit":
-      singleTopNavbar();
+      singleTopNavbar(view);
+      add_single_topbar_events(vaga.id, vaga.is_favorite)
       $("#content").html(edit(vaga));
       add_edit_event(vaga);
       break;
 
     case "favorites":
-      singleTopNavbar();
+      singleTopNavbar(view);
+      add_single_topbar_events(vaga.id, vaga.is_favorite)
       $("#content").html(favoritesView());
       favoriteItems();
       break;
 
     case "trash":
-      singleTopNavbar();
+      singleTopNavbar(view);
+      add_single_topbar_events(vaga.id, vaga.is_favorite)
       $("#content").html(trashView());
       $("#empty-trash").click(() => {
         let trashcan = new TrashCan();
@@ -76,13 +81,15 @@ export function render(view = String, id = null) {
       break;
 
     case "about":
-      singleTopNavbar();
+      singleTopNavbar(view);
+      add_single_topbar_events(vaga.id, vaga.is_favorite)
       aboutContainer();
       $("#content").html(aboutView());
       break;
 
     case "configs":
-      singleTopNavbar();
+      singleTopNavbar(view);
+      add_single_topbar_events(vaga.id, vaga.is_favorite)
       configsContainer();
       $("#content").html(configsView());
       break;
@@ -94,13 +101,13 @@ export function render(view = String, id = null) {
 
 function hastopNavbar(listViews = Array()) {
   listViews.forEach(view => {
-    if (lastActions.includes(view)) {
+    if (lastActions.includes(view) || lastActions[0] == 'home') {
       topNavbar();
     }
   })
 }
 
-let lastActions = Array();
+let lastActions = Array('home');
 
 export function setReferer(lastActions = Array(), viewName = String) {
   if (lastActions.length <= 1 && lastActions[0] != viewName) {

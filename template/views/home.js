@@ -119,7 +119,7 @@ export function novaVaga(vaga) {
             </div>
 
             <div class="col text-right">
-              <span class="visit visit-${identifier}"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              <span class="visit visit-${identifier}" id="${vaga.id}"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
             </div>
         </div>
         </div>
