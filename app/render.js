@@ -8,7 +8,7 @@ import { add_edit_event } from "./Controllers/EditController.js";
 import { newVaga } from "../template/views/new.js";
 import { addNewVaga } from "./Controllers/NewVagaController.js";
 import { singleView, descricao, formatDate, add_single_events } from "../template/views/single.js";
-import { favoriteItems, favoritesView } from "../template/views/favorites.js";
+import { favoritos,favoriteItems, favoritesView } from "../template/views/favorites.js";
 import { trashItems, trashView } from "../template/views/trash.js";
 import { TrashCan } from "./Controllers/TrashcanController.js";
 import { aboutContainer, aboutView } from "../template/views/about.js";

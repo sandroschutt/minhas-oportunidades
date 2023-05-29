@@ -1,8 +1,11 @@
+import { Config } from "../../src/classes/Config.js";
 import { render, setReferer, lastActions } from "../../app/render.js";
 import { Filters } from "../../app/Controllers/FiltersController.js";
-import { homeContainer } from "../views/home.js";
 
 export function topNavbar() {
+  let currentTheme = new Config().get();
+  currentTheme = currentTheme.theme;
+
   let topnavbar = `
     <nav>
     <div id="fluid-navigation" class="row d-flex">
@@ -47,6 +50,7 @@ export function topNavbar() {
             </ul>
             <span class="menu theme">
                 <i class="fa-solid fa-circle-half-stroke"></i>
+                <span class="current-theme">${currentTheme == 'light' ? 'dark' : 'light'}</span>
             </span>
         </div>
     </div>
@@ -65,10 +69,12 @@ export function topNavbar() {
 
   $("#navigation-container").html(topnavbar);
 
+  const configurations = new Config();
   const menuContainer = $('.menu-container');
   const menuIconOutside = $(".menu-icon-outside");
   const menuIconInside = $(".menu-icon-inside");
   const searchInput = $('.search-input input');
+  const changeTheme = $('.menu.theme');
 
   const filters = new Filters();
 
@@ -83,6 +89,23 @@ export function topNavbar() {
   menuIconOutside.click(() => {
     toggleOpen(menuContainer);
   });
+
+  $('.search-icon').click(() => {
+    toggleOpen($('.search-input'))
+    searchInput.focus();
+  })
+
+  searchInput.keyup(() => {
+    filters.buscar(searchInput.val())
+  })
+
+  changeTheme.click(() => {
+    let defineTheme = configurations.get();
+    defineTheme = defineTheme.theme;
+    defineTheme == 'light' ?
+    configurations.set_theme('dark') :
+    configurations.set_theme('light');
+  })
 
   $("#lixeira").click(() => {
     render("trash");
@@ -106,15 +129,6 @@ export function topNavbar() {
     render('about');
     toggleOpen(menuContainer);
     setReferer(lastActions, 'about');
-  })
-
-  $('.search-icon').click(() => {
-    toggleOpen($('.search-input'))
-    searchInput.focus();
-  })
-
-  searchInput.keyup(() => {
-    filters.buscar(searchInput.val())
   })
 }
 

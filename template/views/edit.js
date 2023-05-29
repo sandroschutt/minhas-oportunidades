@@ -18,10 +18,14 @@ export function edit(vaga) {
 
   <div class="">
     <label for="edit-portal" class="">Portal:</label>
-    <select class="" id="edit-portal" value="${vaga.portal}">
+    <select class="" id="edit-portal">
+      <option value="${vaga.portal}" selected hidden>${vaga.portal}</option>
       <option value="linkedin">linkedin</option>
       <option value="gupy">gupy</option>
+      <option value="jobs">jobs</option>
+      <option value="quikin">quikin</option>
       <option value="email">email</option>
+      <option value="outros">outros</option>
     </select>
   </div>
 
@@ -37,8 +41,8 @@ export function edit(vaga) {
 
   <div class="">
     <label for="edit-categoria" class="">Categoria:</label>
-    <select class="" id="edit-categoria" value="${vaga.categoria}">
-      <option value="${vaga.categoria}">${vaga.categoria}</option>
+    <select class="" id="edit-categoria"  >
+      <option value="${vaga.categoria}" selected hidden>${vaga.categoria}</option>
       <option value="front-end">front-end</option>
       <option value="front-end-pleno">front-end-pleno</option>
       <option value="front-end-senior">front-end-senior</option>
@@ -48,7 +52,14 @@ export function edit(vaga) {
       <option value="fullstack">fullstack</option>
       <option value="fullstack-pleno">fullstack-pleno</option>
       <option value="fullstack-senior">fullstack-senior</option>
+      <option value="wordpress">wordpress</option>
+      <option value="desenvolvedor-web">desenvolvedor-web</option>
     </select>
+  </div>
+
+  <div class="">
+    <label for="especialidade" class="">Especialidade:</label>
+    <input type="text" class="" id="edit-especialidade" value="${vaga.especialdade}">
   </div>
 
   <div class="">
@@ -77,13 +88,15 @@ export function edit(vaga) {
   <div class="">
     <label for="edit-status" class="">Status:</label>
     <select class="" name="status" id="edit-status">
-      <option value="${vaga.status}">${vaga.status}</option>
+      <option value="${vaga.status}" selected hidden>${vaga.status}</option>
+      <option value="salva">Salva</option>
       <option value="aplicado">Aplicado</option>
       <option value="fit-cultural">Fit cultural</option>
       <option value="exame-tecnico">Teste técnico</option>
       <option value="entrevista">Entrevista</option>
       <option value="reprovado">Reprovado</option>
       <option value="aprovado">Aprovado</option>
+      <option value="vaga-encerrada">Vaga encerrada</option>
     </select>
   </div>
 
@@ -92,5 +105,5 @@ export function edit(vaga) {
 </form>
     `;
 
-    return edit;
+  return edit;
 }

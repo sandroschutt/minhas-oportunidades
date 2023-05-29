@@ -10,11 +10,11 @@
 }
 
 #filter-tabs select option {
-  background-color: #000000;
+  /* background-color: #000000; */
 }
 
 #filter-tabs select option:checked {
-  background-color: black !important;
+  /* background-color: black !important; */
 }
 
 #filter-tabs .divider {
@@ -24,7 +24,7 @@
 #filter-tabs {
   margin-right: 0;
   margin-left: 0;
-  background-color: #000000;
+  /* background-color: #000000; */
 }
 
 #filter-tabs ul,

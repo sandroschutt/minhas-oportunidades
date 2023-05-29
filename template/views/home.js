@@ -1,8 +1,11 @@
-import { Vagas } from "../../src/classes/Vagas.js";
+import { Config } from "../../src/classes/Config.js";
+import { theme } from "../../app/Controllers/ConfigController.js";
 import { Home } from "../../app/Controllers/HomeController.js";
 import { render } from "../../app/render.js";
 
-// homeContainer();
+const configs = new Config().get();
+
+theme(configs.theme);
 
 export function homeContainer() {
   let homeContainer = `
@@ -79,7 +82,7 @@ export function novaVaga(vaga) {
   window.screen.width < 900 ? nome = vaga.nome.substring(0, 30) : nome = vaga.nome;
 
   let item = `
-    <div class="card">
+    <div class="card bg-transparent">
     <div class="heading" id="heading${identifier}">
         <div class="vaga-mobile" data-toggle="collapse" data-target="#collapse${identifier}" aria-expanded="true" aria-controls="collapse${identifier}">
         <i class="fa-solid fa-file"></i>

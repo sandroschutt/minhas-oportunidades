@@ -1,9 +1,8 @@
-import {Vagas} from '../classes/Vagas.js';
-
 let has_data = false;
-localStorage.getItem('vagas') == null ? has_data = false : has_data = true;
+localStorage.getItem('config') == null ? has_data = false : has_data = true;
 
 if(!has_data){
+  create_local_json_config();
   create_local_json_vagas();
 }
 
@@ -17,8 +16,18 @@ async function create_local_json_vagas() {
   window.location.reload();
 }
 
+async function create_local_json_config() {
+  let config = get_model('config');
+
+  console.log(await config)
+  
+  localStorage.setItem("config", JSON.stringify(await config));
+
+  window.location.reload();
+}
+
 async function get_model(model) {
-  let fetchModel = await fetch(`./src/data/vagas/${model}.json`);
+  let fetchModel = await fetch(`./src/data/${model}/${model}.json`);
   let final_model = await fetchModel.json()
 
   return await final_model;
