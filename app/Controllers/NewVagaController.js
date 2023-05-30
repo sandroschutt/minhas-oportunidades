@@ -14,8 +14,6 @@ export function addNewVaga() {
       url: $("#new-url").val(),
     };
 
-    console.log(new_vaga_values);
-
     let new_vaga = new Vaga(
       new_vaga_values.nome,
       new_vaga_values.empresa,

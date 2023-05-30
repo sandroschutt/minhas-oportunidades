@@ -33,7 +33,6 @@ export function add_edit_event(vaga = Object.JSON) {
   $("#editar-vaga").click(() => {
     let vagas = new Vagas();
     let edited_values = get_edited_values();
-    console.log(edited_values);
     vagas.edit(vaga.id, edited_values);
     render('single', vaga.id);
   });

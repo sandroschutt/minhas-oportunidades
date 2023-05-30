@@ -88,7 +88,7 @@ export function novaVaga(vaga) {
         <i class="fa-solid fa-file"></i>
         <span class="vaga-nome-mobile">${nome}</span>
         <span>
-            <i class="fa-regular fa-circle" style="color: ${status_color}"></i>
+            <i class="fa-regular fa-circle-dot" style="color: ${status_color}"></i>
         </span>
         </div>
     </div>
@@ -109,7 +109,7 @@ export function novaVaga(vaga) {
         <div class="descricao ">
             <h6><strong>Descrição:</strong></h6>
             <p>
-            ${vaga.descricao.substring(0, 200)}...
+            ${window.screen.width < 1000 ? vaga.descricao.substring(0, 200) : vaga.descricao.substring(0, 800)}...
             </p>
         </div>
 

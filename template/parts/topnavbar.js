@@ -49,7 +49,7 @@ export function topNavbar() {
                 </li>
             </ul>
             <span class="menu theme">
-                <i class="fa-solid fa-circle-half-stroke"></i>
+                <i class="fa-solid fa-circle-dot-half-stroke"></i>
                 <span class="current-theme">${currentTheme == 'light' ? 'dark' : 'light'}</span>
             </span>
         </div>

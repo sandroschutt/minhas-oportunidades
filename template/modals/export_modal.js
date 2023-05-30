@@ -31,9 +31,8 @@ let export_modal = `
 $("#mo-content").append(export_modal);
 
 $("#export-button").click(() => {
-  console.log("clicou");
   if ($("#exportar-opcoes").val() == "vagas") {
-    let today = new Date().toJSON().slice(0, 10)
+    let today = new Date().toJSON().slice(0, 10);
     const vagas = new Vagas().get_vagas();
     const filename = `mo_bkp_${today}.json`;
     const jsonStr = JSON.stringify(vagas);
@@ -52,6 +51,6 @@ $("#export-button").click(() => {
 
     document.body.removeChild(element);
   } else {
-    alert('Funcionalidade em desenvolvimento...');
+    alert("Funcionalidade em desenvolvimento...");
   }
 });

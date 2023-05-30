@@ -45,7 +45,7 @@ export class Vagas {
   update(vagas) {
     vagas = { vagas: vagas };
     localStorage.setItem("vagas", JSON.stringify(vagas));
-    // window.location.reload();
+    window.location.reload();
   }
 
   edit(id = String, edited_values = Object.JSON) {

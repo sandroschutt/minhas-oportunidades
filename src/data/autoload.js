@@ -9,8 +9,6 @@ if(!has_data){
 async function create_local_json_vagas() {
   let vagas = get_model('vagas');
 
-  console.log(await vagas)
-  
   localStorage.setItem("vagas", JSON.stringify(await vagas));
 
   window.location.reload();
@@ -18,8 +16,6 @@ async function create_local_json_vagas() {
 
 async function create_local_json_config() {
   let config = get_model('config');
-
-  console.log(await config)
   
   localStorage.setItem("config", JSON.stringify(await config));
 

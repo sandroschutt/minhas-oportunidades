@@ -27,7 +27,7 @@
   font-weight: 600;
 }
 
-.fa-circle {
+.fa-circle-dot {
   font-size: 12px;
 }
 
@@ -73,11 +73,38 @@
 }
 
 @media screen and (min-width: 1000px) {
+  #list-mobile {
+    margin: 3%;
+  }
+
   .vaga-mobile {
     width: 100%;
   }
 
   .vaga-mobile .vaga-nome-mobile {
     width: 92%;
+  }
+
+  .card .preview-info,
+  .card .descricao,
+  .card .actions {
+    padding: 0px 5.5% !important;
+  }
+
+  .card .preview-info {
+    font-size: 15px;
+    margin: 20px 0 20px;
+  }
+
+  .card .preview-info p {
+    margin-bottom: 3px;
+  }
+
+  .card .descricao p {
+    font-size: 16px;
+  }
+
+  .card .descricao {
+    margin-bottom: 50px;
   }
 }

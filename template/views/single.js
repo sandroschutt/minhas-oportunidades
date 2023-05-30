@@ -12,8 +12,8 @@ export function singleView(vaga = Object.JSON) {
 
             <div class="vaga-info">
                 <div class="info">
-                    <span class="text-primary"><i class="fa-regular fa-circle text-primary"></i></span>
-                    <span class="text-primary">${vaga.status}</span>
+                    <span class="${statusColor(vaga.status)}"><i class="fa-regular fa-circle-dot ${statusColor(vaga.status)}"></i></span>
+                    <span class="${statusColor(vaga.status)}">${vaga.status}</span>
                     <span class="categoria rounded">${vaga.categoria}</span>
                 </div>
                 <div class="info">
@@ -22,7 +22,7 @@ export function singleView(vaga = Object.JSON) {
                 </div>
                 <div class="info">
                     <span class=""><i class="fa-solid fa-calendar-days"></i></span>
-                    <span class="grey">Concluída em: <span class="data-retorno"></span></span>    
+                    <span class="grey">Retorno: <span class="data-retorno"></span></span>    
                     <hr>
                 </div>
             </div>
@@ -38,9 +38,9 @@ export function singleView(vaga = Object.JSON) {
 }
 
 export function add_single_events(vaga) {
-  $('.link').click(() => {
-    window.open(vaga.url, '_blank');
-  })
+  $(".link").click(() => {
+    window.open(vaga.url, "_blank");
+  });
 }
 
 export function descricao(id = String) {
@@ -65,4 +65,37 @@ export function formatDate(dateString = String, element = Object.html) {
 
   let finalString = `${day} de ${month} de ${year}`;
   element.text(finalString);
+}
+
+function statusColor(status = String) {
+  let color = null;
+
+  switch (status) {
+    case "aplicado":
+      color = "text-primary";
+      break;
+    case "fit-cultural":
+      color = "text-secondary";
+      break;
+    case "entrevista":
+      color = "text-info";
+      break;
+    case "exame-tecnico":
+      color = "text-warning";
+      break;
+    case "reprovado":
+      color = "text-danger";
+      break;
+    case "aprovado":
+      color = "text-success";
+      break;
+    case "salva":
+      color = "text-white";
+      break;
+    case "encerrada":
+      color = "text-muted";
+      break;
+  }
+
+  return color;
 }
