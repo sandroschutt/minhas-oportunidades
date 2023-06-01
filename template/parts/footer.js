@@ -1,13 +1,13 @@
 import { render, setReferer, lastActions } from "../../app/render.js";
 
-let footer = `
+let navbar = `
 <footer>
     <div class="navbar">
       <div class="text-center" id="home">
         <img src="./resources/icons/home-svgrepo-com.svg" alt="navbar home" />
       </div>
 
-      <div class="text-center">
+      <div class="text-center" id="insights">
         <img
           src="./resources/icons/bar-chart-5-svgrepo-com.svg"
           alt="navbar insights"
@@ -31,11 +31,15 @@ let footer = `
   </footer>
 `;
 
-$('html').append(footer)
+$('html').append(navbar)
 
 $('#home').click(() => {
   render('home')
   let previousViews = setReferer(lastActions, 'home')
+})
+
+$('#insights').click(() => {
+  render('insights');
 })
 
 $('#new').click(() => {

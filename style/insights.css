@@ -1,0 +1,85 @@
+#insights-container {
+  padding: 0px 24px;
+}
+
+#insights-container section {
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 80px;
+}
+
+#insights-container section {
+  font-weight: 900 !important;
+  color: #979a9c;
+}
+
+#status h3 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  letter-spacing: 0.08em;
+}
+
+#insights-status .col {
+  text-align: center;
+  width: 114px;
+  height: 114px;
+  margin: 8px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+#insights-status .col p,
+#complementares p {
+  font-weight: 600;
+  font-size: 64px;
+  margin-top: -4px;
+  margin-bottom: 0;
+  height: 70%;
+}
+
+#insights-status .col span,
+#complementares span {
+  font-weight: bold;
+}
+
+#complementares .border {
+  height: 114px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+#complementares .row {
+  margin-top: 16px;
+}
+
+#complementares p {
+  font-size: 80px;
+}
+
+#complementares p span {
+  font-size: 20px;
+}
+
+#complementares .percentage {
+  max-width: 30%;
+  text-align: center;
+}
+
+#complementares .description {
+  padding: 24px 16px 24px 32px;
+  line-height: 1.1em;
+}
+
+#complementares .description span {
+  font-weight: 500;
+  font-size: 16px;
+}

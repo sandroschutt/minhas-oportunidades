@@ -7,7 +7,7 @@ export function topNavbar() {
   currentTheme = currentTheme.theme;
 
   let topnavbar = `
-    <nav>
+    <nav class="">
     <div id="fluid-navigation" class="row d-flex">
     <div class="col-1">
         <!-- ícone -->

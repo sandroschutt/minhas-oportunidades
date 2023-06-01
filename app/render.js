@@ -1,10 +1,13 @@
+import { Config } from "../src/classes/Config.js";
 import { Vagas } from "../src/classes/Vagas.js";
-import { homeContainer, homeView } from "../template/views/home.js";
 import { topNavbar } from "../template/parts/topnavbar.js";
 import { singleTopNavbar, add_single_topbar_events } from "../template/parts/single_topbar.js";
 import { filterVagas } from "../template/parts/filters.js";
+import { homeContainer, homeView } from "../template/views/home.js";
 import { edit } from "../template/views/edit.js";
 import { add_edit_event } from "./Controllers/EditController.js";
+import { insightsView } from "../template/views/insights.js";
+import { createBarChart, createLineChart, setCategoriesChartValues, setPortalsChartValues } from "../template/parts/charts.js";
 import { newVaga } from "../template/views/new.js";
 import { addNewVaga } from "./Controllers/NewVagaController.js";
 import { singleView, descricao, formatDate, add_single_events } from "../template/views/single.js";
@@ -15,6 +18,7 @@ import { aboutContainer, aboutView } from "../template/views/about.js";
 import { configsContainer, configsView } from "../template/views/configuration.js";
 
 export function render(view = String, id = null) {
+  const configs = new Config();
   let vagas = new Vagas().get_vagas();
   let vaga = new Vagas().get_vaga(id);
 
@@ -34,6 +38,13 @@ export function render(view = String, id = null) {
       filterVagas();
       homeContainer();
       homeView(vagas);
+      break;
+
+    case "insights":
+      insightsView();
+      createLineChart('behaviorChart');
+      createBarChart('categoriaChart', 'Vagas aplicadas por categoria', configs.get_categories(), setCategoriesChartValues(vagas, configs));
+      createBarChart('portalChart', 'Vagas aplicadas por portal', configs.get_portals(), setPortalsChartValues(vagas, configs));
       break;
 
     case "single":
