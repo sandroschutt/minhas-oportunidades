@@ -14,7 +14,7 @@ export function createLineChart(chartName = String) {
         datasets: [
           {
             data: setLineChartValues(vagas),
-            label: "Número de vagas aplicadas ao longo da semana",
+            label: "Aplicações",
             borderColor: "#3cba9f",
             fill: true,
           },

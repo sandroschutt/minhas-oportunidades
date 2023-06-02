@@ -2,11 +2,7 @@
     "theme" : "light",
     "categorias" : [
         "front-end",
-        "front-end-pl",
-        "front-end-sr",
         "back-end",
-        "back-end-pl",
-        "back-end-sr",
         "fullstack",
         "wordpress",
         "web-dev"

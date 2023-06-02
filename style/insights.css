@@ -83,3 +83,31 @@
   font-weight: 500;
   font-size: 16px;
 }
+
+@media screen and (min-width: 1000px) {
+  #insights-container {
+    padding: 0 86px;
+  }
+
+  #insights-container section {
+    margin-bottom: 86px;
+  }
+
+  #categorias,
+  #portais,
+  #comportamento {
+    display: inline-block!important;
+    margin-right: 4%!important;
+    width: 45%;
+  }
+  
+  #complementares .ap-responses,
+  #complementares  .ap-status {
+    margin-right: 1%;
+  }
+
+  #complementares .description {
+    padding: 24px 16px 24px 16px;
+    line-height: 1.1em;
+  }
+}

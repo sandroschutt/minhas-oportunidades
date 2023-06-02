@@ -43,8 +43,10 @@ export function render(view = String, id = null) {
     case "insights":
       insightsView();
       createLineChart('behaviorChart');
-      createBarChart('categoriaChart', 'Vagas aplicadas por categoria', configs.get_categories(), setCategoriesChartValues(vagas, configs));
-      createBarChart('portalChart', 'Vagas aplicadas por portal', configs.get_portals(), setPortalsChartValues(vagas, configs));
+      createBarChart('categoriaChart', 'Aplicações', configs.get_categories(), setCategoriesChartValues(vagas, configs));
+      createBarChart('statusChart', 'Aplicações', configs.get_categories(), setCategoriesChartValues(vagas, configs));
+      createBarChart('portalChart', 'Aplicações', configs.get_portals(), setPortalsChartValues(vagas, configs));
+      createBarChart('testeChart', 'Aplicações', configs.get_categories(), setCategoriesChartValues(vagas, configs));
       break;
 
     case "single":
