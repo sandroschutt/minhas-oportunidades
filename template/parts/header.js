@@ -18,6 +18,7 @@ let header = `
     <link rel="stylesheet" href="./style/modals.css">
     <link rel="stylesheet" href="./style/views.css">
     <link rel="stylesheet" href="./style/insights.css">
+    <link rel="stylesheet" href="./style/about.css">
     <!-- jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.6.0.min.js"

@@ -1,5 +1,5 @@
 let has_data = false;
-localStorage.getItem('config') == null ? has_data = false : has_data = true;
+localStorage.getItem('config') == null || localStorage.getItem('vagas') == null ? has_data = false : has_data = true;
 
 if(!has_data){
   create_local_json_config();

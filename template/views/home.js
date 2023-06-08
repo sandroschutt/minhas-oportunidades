@@ -139,7 +139,7 @@ export function add_vaga_events(item, home, vaga, identifier = null) {
     home.edit(vaga.id);
   });
 
-  let starIconColor = '#979a9c';
+  let starIconColor = '#666464;';
   vaga.is_favorite == "true" ? starIconColor = "yellow" : starIconColor = starIconColor;
   $(`.favorite-${identifier}`).css('color', starIconColor);
 

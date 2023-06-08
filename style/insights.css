@@ -13,28 +13,6 @@
   color: #979a9c;
 }
 
-#status h3 {
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 29px;
-  letter-spacing: 0.08em;
-}
-
-#insights-status .col {
-  text-align: center;
-  width: 114px;
-  height: 114px;
-  margin: 8px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -o-border-radius: 10px;
-}
-
-#insights-status .col p,
 #complementares p {
   font-weight: 600;
   font-size: 64px;
@@ -43,7 +21,6 @@
   height: 70%;
 }
 
-#insights-status .col span,
 #complementares span {
   font-weight: bold;
 }
@@ -84,6 +61,22 @@
   font-size: 16px;
 }
 
+#medias .row div {
+  margin-right: 20px;
+}
+
+#medias .media-category {
+  font-size: 32px;
+}
+
+#medias .media-value {
+  font-size: 28px;
+}
+
+#medias .media-value span{
+  font-size: 16px;
+}
+
 @media screen and (min-width: 1000px) {
   #insights-container {
     padding: 0 86px;
@@ -91,14 +84,6 @@
 
   #insights-container section {
     margin-bottom: 86px;
-  }
-
-  #categorias,
-  #portais,
-  #comportamento {
-    display: inline-block!important;
-    margin-right: 4%!important;
-    width: 45%;
   }
   
   #complementares .ap-responses,

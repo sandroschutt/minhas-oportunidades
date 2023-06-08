@@ -41,7 +41,7 @@ export function topNavbar() {
                     </p>
                     <p class="lixeira" id="favoritos">Favoritos</p>
                     <p class="lixeira" id="lixeira">Lixeira</p>
-                    <p class="configuracoes" id="configuracoes">Configurações</p>
+                    <p class="configuracoes" id="configuracoes" style="display: none;">Configurações</p>
                 </li>
                 <li>
                     <h5 class="arquivo">Sobre</h5>
@@ -49,7 +49,7 @@ export function topNavbar() {
                 </li>
             </ul>
             <span class="menu theme">
-                <i class="fa-solid fa-circle-dot-half-stroke"></i>
+                <i class="fa-solid fa-circle-half-stroke"></i>
                 <span class="current-theme">${currentTheme == 'light' ? 'dark' : 'light'}</span>
             </span>
         </div>

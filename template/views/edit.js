@@ -1,3 +1,7 @@
+import { selectOptionThemeColor } from "../../app/Controllers/ConfigController.js";
+
+let bgColor = selectOptionThemeColor();
+
 export function edit(vaga) {
   let edit = `
     <div id="header">
@@ -19,13 +23,13 @@ export function edit(vaga) {
   <div class="">
     <label for="edit-portal" class="">Portal:</label>
     <select class="" id="edit-portal">
-      <option value="${vaga.portal}" selected hidden>${vaga.portal}</option>
-      <option value="linkedin">linkedin</option>
-      <option value="gupy">gupy</option>
-      <option value="jobs">jobs</option>
-      <option value="quikin">quikin</option>
-      <option value="email">email</option>
-      <option value="outros">outros</option>
+      <option style="background-color: ${bgColor}" value="${vaga.portal}" selected hidden>${vaga.portal}</option>
+      <option style="background-color: ${bgColor}" value="linkedin">linkedin</option>
+      <option style="background-color: ${bgColor}" value="gupy">gupy</option>
+      <option style="background-color: ${bgColor}" value="jobs">jobs</option>
+      <option style="background-color: ${bgColor}" value="quikin">quikin</option>
+      <option style="background-color: ${bgColor}" value="e-mail">e-mail</option>
+      <option style="background-color: ${bgColor}" value="outros">outros</option>
     </select>
   </div>
 
@@ -42,25 +46,22 @@ export function edit(vaga) {
   <div class="">
     <label for="edit-categoria" class="">Categoria:</label>
     <select class="" id="edit-categoria"  >
-      <option value="${vaga.categoria}" selected hidden>${vaga.categoria}</option>
-      <option value="front-end">front-end</option>
-      <option value="front-end-pleno">front-end-pleno</option>
-      <option value="front-end-senior">front-end-senior</option>
-      <option value="back-end">back-end</option>
-      <option value="back-end-pleno">back-end-pleno</option>
-      <option value="back-end-senior">back-end-senior</option>
-      <option value="fullstack">fullstack</option>
-      <option value="fullstack-pleno">fullstack-pleno</option>
-      <option value="fullstack-senior">fullstack-senior</option>
-      <option value="wordpress">wordpress</option>
-      <option value="desenvolvedor-web">desenvolvedor-web</option>
+      <option style="background-color: ${bgColor}" value="${vaga.categoria}" selected hidden>${vaga.categoria}</option>
+      <option style="background-color: ${bgColor}" value="front-end">front-end</option>
+      <option style="background-color: ${bgColor}" value="back-end">back-end</option>
+      <option style="background-color: ${bgColor}" value="fullstack">fullstack</option>
+      <option style="background-color: ${bgColor}" value="wordpress">wordpress</option>
+      <option style="background-color: ${bgColor}" value="web">web</option>
+      <option style="background-color: ${bgColor}" value="outros">outros</option>
     </select>
   </div>
 
+  <!--  //IMPLEMENTAR SISTEMA DE TAGS AQUI
   <div class="">
     <label for="especialidade" class="">Especialidade:</label>
     <input type="text" class="" id="edit-especialidade" value="${vaga.especialdade}">
   </div>
+  -->
 
   <div class="">
     <label for="edit-data-aplicacao" class="">Data de aplicação:</label>
@@ -88,20 +89,19 @@ export function edit(vaga) {
   <div class="">
     <label for="edit-status" class="">Status:</label>
     <select class="" name="status" id="edit-status">
-      <option value="${vaga.status}" selected hidden>${vaga.status}</option>
-      <option value="salva">Salva</option>
-      <option value="aplicado">Aplicado</option>
-      <option value="fit-cultural">Fit cultural</option>
-      <option value="exame-tecnico">Teste técnico</option>
-      <option value="entrevista">Entrevista</option>
-      <option value="reprovado">Reprovado</option>
-      <option value="aprovado">Aprovado</option>
-      <option value="vaga-encerrada">Vaga encerrada</option>
+      <option style="background-color: ${bgColor}" value="${vaga.status}" selected hidden>${vaga.status}</option>
+      <option style="background-color: ${bgColor}" value="salva">Salva</option>
+      <option style="background-color: ${bgColor}" value="aplicado">Aplicado</option>
+      <option style="background-color: ${bgColor}" value="fit-cultural">Fit cultural</option>
+      <option style="background-color: ${bgColor}" value="exame-tecnico">Teste técnico</option>
+      <option style="background-color: ${bgColor}" value="entrevista">Entrevista</option>
+      <option style="background-color: ${bgColor}" value="reprovado">Reprovado</option>
+      <option style="background-color: ${bgColor}" value="aprovado">Aprovado</option>
+      <option style="background-color: ${bgColor}" value="vaga-encerrada">Vaga encerrada</option>
     </select>
   </div>
 
-  <button type="button" class="btn btn-dark py-0 px-2" data-dismiss="modal">Cancelar</button>
-  <button type="button" id="editar-vaga"class="btn btn-dark py-0 px-2">Salvar</button>
+  <button type="button" id="editar-vaga"class="btn btn-dark border border-secondary py-2 px-3">Salvar</button>
 </form>
     `;
 

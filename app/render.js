@@ -16,11 +16,13 @@ import { trashItems, trashView } from "../template/views/trash.js";
 import { TrashCan } from "./Controllers/TrashcanController.js";
 import { aboutContainer, aboutView } from "../template/views/about.js";
 import { configsContainer, configsView } from "../template/views/configuration.js";
+import { setStatusChartValues } from "./Controllers/InsightsController.js";
 
 export function render(view = String, id = null) {
   const configs = new Config();
-  let vagas = new Vagas().get_vagas();
-  let vaga = new Vagas().get_vaga(id);
+  const cVagas = new Vagas();
+  let vagas = cVagas.get_vagas();
+  let vaga = cVagas.get_vaga(id);
 
   let listViews = Array(
     'single',
@@ -44,9 +46,9 @@ export function render(view = String, id = null) {
       insightsView();
       createLineChart('behaviorChart');
       createBarChart('categoriaChart', 'Aplicações', configs.get_categories(), setCategoriesChartValues(vagas, configs));
-      createBarChart('statusChart', 'Aplicações', configs.get_categories(), setCategoriesChartValues(vagas, configs));
+      createBarChart('statusChart', 'Aplicações', configs.get_status(), setStatusChartValues(vagas, configs));
       createBarChart('portalChart', 'Aplicações', configs.get_portals(), setPortalsChartValues(vagas, configs));
-      createBarChart('testeChart', 'Aplicações', configs.get_categories(), setCategoriesChartValues(vagas, configs));
+      // createBarChart('testeChart', 'Aplicações', configs.get_categories(), setCategoriesChartValues(vagas, configs));
       break;
 
     case "single":

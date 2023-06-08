@@ -5,11 +5,23 @@ export class Config {
         return configs;
     }
 
+    get_theme() {
+        let configs = this.get();
+        let theme = configs.theme
+        return theme;
+    }
+
     set_theme(value = String) {
         let configs = this.get();
         configs.theme = value;
         localStorage.setItem("config", JSON.stringify(configs));
         window.location.reload();
+    }
+
+    get_status() {
+        let configs = this.get();
+        let status = configs.status;
+        return status;
     }
 
     get_categories() {

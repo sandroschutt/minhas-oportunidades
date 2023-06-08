@@ -12,7 +12,7 @@ let import_modal = `
         </button>
       </div>
       <div class="modal-body">
-        <input class=" form-control-sm bg-dark text-light py-0 px-2" type="file" id="fileInput" accept=".json">
+        <input class="form-control p-0" type="file" id="fileInput" accept=".json">
       </div>
     </div>
   </div>

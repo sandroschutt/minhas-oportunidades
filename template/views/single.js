@@ -1,20 +1,25 @@
 import Vagas from "../../src/classes/Vagas.js";
+import { Config } from "../../src/classes/Config.js";
+
+const theme = new Config().get_theme();
+let textColor = null;
+theme == "light" ? textColor = "#00000090" : textColor = "#ffffff99"
 
 export function singleView(vaga = Object.JSON) {
   let single = `
         <div id="header" class="single">
-            <h2><strong>${vaga.nome}</strong></h2>
+            <h2 style="color: ${textColor};"><strong>${vaga.nome}</strong></h2>
             <div class="vaga-sub-header">
                 <span>${vaga.empresa} |</span>
                 <span>Remoto</span>
-                <span class="link text-primary"><i class="fa-solid fa-link text-primary"></i>link</span>
+                <span class="link text-primary"><i class="fa-solid fa-link text-primary"></i><span class="text-primary" style="margin-left:5px;">link</span></span>
             </div>
 
             <div class="vaga-info">
                 <div class="info">
                     <span class="${statusColor(vaga.status)}"><i class="fa-regular fa-circle-dot ${statusColor(vaga.status)}"></i></span>
                     <span class="${statusColor(vaga.status)}">${vaga.status}</span>
-                    <span class="categoria rounded">${vaga.categoria}</span>
+                    <span class="categoria rounded ${theme == 'light' ? 'text-light' : 'text-dark'}">${vaga.categoria}</span>
                 </div>
                 <div class="info">
                     <span class=""><i class="fa-solid fa-clock"></i></span>
@@ -28,9 +33,9 @@ export function singleView(vaga = Object.JSON) {
             </div>
         </div>
 
-        <div id="view-container">
+        <div id="view-container" style="color: ${textColor};">
             <h3>Descrição</h3>
-            <p class="single-descricao"></p>
+          <p class="single-descricao"></p>
         </div>
     `;
 

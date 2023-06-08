@@ -1,6 +1,7 @@
 import { Vagas } from "../../src/classes/Vagas.js";
 import { novaVaga } from "./home.js";
 
+const trashVagas = new Vagas().get_trash();
 
 export function trashContainer() {
     let trashContainer = `
@@ -14,10 +15,11 @@ export function trashContainer() {
   }
 
 export function trashView() {
+
     let trashHeader = `
         <div id="header" class="single" style="margin-bottom: 15%;">
             <h2 style="margin-bottom: 0;"><strong>Lixeira</strong></h2>
-            <span class="mr-2 text-secondary">11 Vagas</span>
+            <span class="mr-2 text-secondary">${trashVagas.length} vagas</span>
         </div>
     `;
 

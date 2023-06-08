@@ -2,64 +2,17 @@ import { Config } from "../../src/classes/Config.js";
 import Vagas from "../../src/classes/Vagas.js";
 
 const confgs = new Config();
-
-export function countStatus(vagas = Array) {
-  let status = {
-    todas: 0,
-    aplicado: 0,
-    fit_cultural: 0,
-    entrevista: 0,
-    teste: 0,
-    reprovado: 0,
-    aprovado: 0,
-  };
-
-  for (const vaga of vagas) {
-    switch (vaga.status) {
-      case "aplicado":
-        status.aplicado++
-        status.todas++
-        break;
-      case "fit-cultural":
-        status.fit_cultural++
-        status.todas++
-        break;
-      case "entrevista":
-        status.entrevista++
-        status.todas++
-        break;
-      case "exame-tecnico":
-        status.teste++
-        status.todas++
-        break;
-      case "aprovado":
-        status.aprovado++
-        status.todas++
-        break;
-      case "reprovado":
-        status.reprovado++
-        status.todas++
-        break;
-    }
-  }
-
-  return status;
-}
-
-export function statusPercentage(status = Object.JSON, total = Int) {
-  let percentage = null;
-  percentage = Math.floor((status * 100)/ total)
-  return percentage;
-}
+const vagas = new Vagas().get_vagas();
+const firstAppliance = vagas.reverse()[0].dataaplicacao;
 
 export function applicationResponses(vagas = Array, total = Int) {
-  let responses = vagas.filter(vaga => vaga.dataretorno)
-  let responsePercentage = Math.floor((responses.length * 100) / total)
+  let responses = vagas.filter((vaga) => vaga.dataretorno);
+  let responsePercentage = Math.floor((responses.length * 100) / total);
   return responsePercentage;
 }
 
 export function statusChange(vagas = Array, total = Int) {
-  let status = vagas.filter(vaga => vaga.status != 'aplicado');
+  let status = vagas.filter((vaga) => vaga.status != "aplicado");
   let statusChangePercentage = Math.floor((status.length * 100) / total);
   return statusChangePercentage;
 }
@@ -68,7 +21,7 @@ function getLastSevenDays() {
   const dates = [];
   const today = new Date(); // Get the current date
 
-  for (let i = 6; i >= 0; i--) {
+  for (let i = 5; i >= (-1); i--) {
     const date = new Date(today);
     date.setDate(today.getDate() - i); // Subtract days from the current date
 
@@ -101,15 +54,7 @@ export function getWeekdays() {
 export function setLineChartValues(vagas = Array) {
   let lastWeek = getLastSevenDays();
 
-  let chartValues = [
-    [lastWeek[0], 0],
-    [lastWeek[1], 0],
-    [lastWeek[2], 0],
-    [lastWeek[3], 0],
-    [lastWeek[4], 0],
-    [lastWeek[5], 0],
-    [lastWeek[6], 0],
-  ];
+  let chartValues = lastWeek.map((day) => (day = [day, 0]));
 
   let lastWeekAppliances = vagas.filter((vaga) =>
     lastWeek.includes(vaga.dataaplicacao)
@@ -118,7 +63,7 @@ export function setLineChartValues(vagas = Array) {
     (vaga) => (vaga = vaga.dataaplicacao)
   );
 
-  chartValues.forEach((value, index) => {
+  chartValues.forEach((value) => {
     for (let appliance of lastWeekAppliances) {
       if (appliance == value[0]) {
         value[1] += 1;
@@ -132,9 +77,9 @@ export function setLineChartValues(vagas = Array) {
 }
 
 export function setCategoriesChartValues(vagas = Array, configs) {
-  let categories = configs.get_categories()
-  categories = categories.map(category => category = [category, 0]);
-  
+  let categories = configs.get_categories();
+  categories = categories.map((category) => (category = [category, 0]));
+
   categories.forEach((category) => {
     for (let vaga of vagas) {
       if (category[0] == vaga.categoria) {
@@ -148,10 +93,27 @@ export function setCategoriesChartValues(vagas = Array, configs) {
   return categories;
 }
 
+export function setStatusChartValues(vagas = Array, configs) {
+  let status = configs.get_status();
+  status = status.map((stat) => (stat = [stat, 0]));
+
+  status.forEach((stat) => {
+    for (let vaga of vagas) {
+      if (stat[0] == vaga.status) {
+        stat[1] += 1;
+      }
+    }
+  });
+
+  status = status.map((stat) => (stat = stat[1]));
+
+  return status;
+}
+
 export function setPortalsChartValues(vagas = Array, configs) {
-  let portals = configs.get_portals()
-  portals = portals.map(portal => portal = [portal, 0]);
-  
+  let portals = configs.get_portals();
+  portals = portals.map((portal) => (portal = [portal, 0]));
+
   portals.forEach((portal) => {
     for (let vaga of vagas) {
       if (portal[0] == vaga.portal) {
@@ -165,3 +127,97 @@ export function setPortalsChartValues(vagas = Array, configs) {
   return portals;
 }
 
+// calcula média de aplicações diária
+export function getDaysDifference() {
+  const givenDate = new Date(firstAppliance);
+  const currentDate = new Date();
+
+  // Calculate the time difference in milliseconds
+  const timeDifference = currentDate.getTime() - givenDate.getTime();
+
+  // Convert the time difference to days
+  const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+
+  return daysDifference;
+}
+
+function getWeekdaysInRange() {
+  const currentDate = new Date();
+  const weekdays = [];
+
+  const givenDate = new Date(firstAppliance);
+
+  while (givenDate <= currentDate) {
+    const weekday = givenDate.getDay();
+
+    if (weekday <= 6) {
+      const formattedDate = givenDate.toISOString().split("T")[0];
+
+      if (weekdays.length === 0 || weekday === 1) {
+        weekdays.push([formattedDate]);
+      } else {
+        weekdays[weekdays.length - 1].push(formattedDate);
+      }
+    }
+
+    givenDate.setDate(givenDate.getDate() + 1);
+  }
+
+  // console.log(weekdays);
+  return weekdays;
+}
+
+export function weeklyAverage() {
+  let weeks = getWeekdaysInRange();
+  weeks = weeks.map((week) => (week = week.map((day) => day = searchAppliance(day))));
+  weeks = weeks.map(week => week = week.reduce((partialSum, a) => partialSum + a, 0))
+  let weeklyAverageNumber = (weeks.reduce((partialSum, a) => partialSum + a, 0)) / weeks.length;
+  weeklyAverageNumber = weeklyAverageNumber.toFixed(2)
+
+  return weeklyAverageNumber;
+}
+
+function getDaysInMonthsInRange() {
+  const currentDate = new Date();
+  const months = [];
+
+  const givenDate = new Date(firstAppliance); // Replace with your desired start date
+
+  while (givenDate <= currentDate) {
+    const year = givenDate.getFullYear();
+    const month = givenDate.getMonth();
+    const lastDayOfMonth = new Date(year, month + 1, 0).getDate();
+    const days = [];
+
+    for (let day = givenDate.getDate(); day <= lastDayOfMonth; day++) {
+      const currentDate = new Date(year, month, day);
+      const formattedDate = currentDate.toISOString().split('T')[0];
+      days.push(formattedDate);
+    }
+
+    months.push(days);
+    givenDate.setMonth(givenDate.getMonth() + 1);
+    givenDate.setDate(1); // Set the date to the beginning of the next month
+  }
+
+  console.log(months);
+  return months;
+}
+
+export function monthlyAverage() {
+  let months = getDaysInMonthsInRange();
+  months = months.map((month) => (month = month.map((day) => day = searchAppliance(day))));
+  months = months.map(month => month = month.reduce((partialSum, a) => partialSum + a, 0))
+  let monthlyAverageNumber = (months.reduce((partialSum, a) => partialSum + a, 0)) / months.length;
+  monthlyAverageNumber = monthlyAverageNumber.toFixed(2)
+
+  return monthlyAverageNumber;
+}
+
+function searchAppliance(day) {
+  let counter = 0;
+  vagas.map(vaga => vaga.dataaplicacao == day ? counter+=1 : false)
+  day = counter;
+
+  return day;
+}

@@ -14,6 +14,7 @@ export function filterVagas() {
             id="status"
             >
               <select class="filter-tab btn filter-rounded border border-secondary text-secondary py-1 px-2" data-status>
+                <option class="text-primary" value="" selected hidden>Status</option>
                 <option class="text-primary" value="aplicado">
                   <span class="categoria filter-tab btn btn-dark filter-rounded py-1 px-2 text-primary">Aplicado</span>
                 </option>
@@ -32,7 +33,7 @@ export function filterVagas() {
                 <option class="text-success">
                   <span class="categoria filter-tab btn btn-dark filter-rounded py-1 px-2" value="aprovado">Aprovado</span>
                 </option>
-                <option class="text-light">
+                <option class="text-dark">
                   <span class="categoria filter-tab btn btn-dark filter-rounded py-1 px-2" value="encerrada">Encerrada</span>
                 </option>
               </select>
@@ -43,17 +44,13 @@ export function filterVagas() {
             id="categoria"
             />
               <select class="filter-tab btn filter-rounded border border-secondary text-secondary py-1 px-2" data-categoria value="">
+                <option class="text-primary" value="" selected hidden>Categoria</option>
                 <option value="front-end">front-end</option>
-                <option value="front-end-pleno">front-end-pleno</option>
-                <option value="front-end-senior">front-end-senior</option>
                 <option value="back-end">back-end</option>
-                <option value="back-end-pleno">back-end-pleno</option>
-                <option value="back-end-pleno">back-end-senior</option>
                 <option value="fullstack">fullstack</option>
-                <option value="fullstack-pleno">fullstack-pleno</option>
-                <option value="fullstack-senior">fullstack-senior</option>
                 <option value="wordpress">wordpress</option>
-                <option value="desenvolvedor-software">desenvolvedor-software</option>
+                <option value="web">web</option>
+                <option value="outros">outros</option>
               </select>
             </li>
             <li
@@ -61,10 +58,13 @@ export function filterVagas() {
             id="portal"
             />
               <select class="filter-tab btn filter-rounded border border-secondary text-secondary py-1 px-2" data-portal>
+                <option class="text-primary" value="" selected hidden>Portal</option>
                 <option value="linkedin">linkedin</option>
-                <option value="jobs">jobs</option>
                 <option value="gupy">gupy</option>
+                <option value="jobs">jobs</option>
+                <option value="quikin">quikin</option>
                 <option value="e-mail">e-mail</option>
+                <option value="outros">outros</option>
               </select>
             </li>
         </ul>
@@ -87,19 +87,19 @@ export function filterVagas() {
     $("[data-status]").on('change', function(){
       let filter = new Filters();
       let status = $(this).val();
-      filter.filter(status)
+      filter.filter(status, "status")
     });
   
     $('[data-categoria]').on('change', function(){
       let filter = new Filters();
       let categoria = $(this).val();
-      filter.filter(categoria)
+      filter.filter(categoria, "categoria")
     });
   
     $('[data-portal]').on('change', function(){
       let filter = new Filters();
       let portal = $(this).val();
-      filter.filter(portal)
+      filter.filter(portal, "portal")
     });
   
   

@@ -2,7 +2,7 @@ import { Vagas } from "../../src/classes/Vagas.js";
 import { homeContainer, novaVaga } from "../../template/views/home.js";
 
 export class Filters {
-  filter(filtro = String) {
+  filter(filtro = String, filterType = String) {
     $("#content").html("");
     homeContainer();
 
@@ -10,7 +10,7 @@ export class Filters {
     vagas = vagas.get_vagas();
 
     vagas.forEach((vaga) => {
-      if(vaga.status == filtro || vaga.categoria == filtro || vaga.portal == filtro && vaga.is_trash == "false"){
+      if((vaga.status == filtro && filterType == "status") || (vaga.categoria == filtro && filterType == "categoria") || (vaga.portal == filtro && filterType == "portal") && (vaga.is_trash == "false")){
         novaVaga(vaga)
       }
     });
@@ -22,6 +22,7 @@ export class Filters {
     homeContainer();
     
     vagas.forEach((vaga) => {
+      busca = busca.toLowerCase();
       let nome = vaga.nome.toLowerCase();
       let empresa = vaga.empresa.toLowerCase();
 

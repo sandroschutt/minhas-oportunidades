@@ -77,6 +77,6 @@ export function add_single_topbar_events(id = String, is_favorite = String) {
 
 function favoriteIconColor(is_favorite = String) {
     let iconColor = null;
-    is_favorite == "true" ? iconColor = 'yellow' : iconColor = '#979a9c';
+    is_favorite == "true" ? iconColor = 'yellow' : false;
     $('.favorite i').css('color', iconColor)
 }

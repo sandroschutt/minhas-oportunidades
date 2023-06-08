@@ -14,5 +14,12 @@
         "e-mail",
         "outros"
     ],
+    "status" : [
+        "aplicado",
+        "fit-cultural",
+        "teste",
+        "reprovado",
+        "aprovado"
+    ],
     "tags" : []
 }
