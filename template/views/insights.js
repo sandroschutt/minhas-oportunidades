@@ -103,18 +103,22 @@ export function insightsView() {
 
             <div class="my-5" id="medias">
                 <h3 class="mb-5">Média de aplicações</h3>
-                <div class="row d-flex">
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4" style="max-width: 30%;">
+                <div class="row d-flex bg-secondary text-dark p-3">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4" style="max-width: 50%;">
                         <p class="media-category">Diária:</p>
-                        <p class="media-value text-center">${dailyAverage.toFixed(2)}<span>/dia</span></p>
+                        <p class="media-value text-center text-light">${dailyAverage.toFixed(2)}<span>/dia</span></p>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4" style="max-width: 30%;">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4" style="max-width: 50%;">
                         <p class="media-category">Semanal:</p>
-                        <p class="media-value text-center">${weeklyAverage()}<span>/semana</span></p>
+                        <p class="media-value text-center text-light">${weeklyAverage()}<span>/sem</span></p>
                     </div>
-                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4" style="max-width: 30%;">
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4" style="max-width: 50%;">
                         <p class="media-category">Mensal:</p>
-                        <p class="media-value text-center">${monthlyAverage()}<span>/mês</span></p>
+                        <p class="media-value text-center text-light">${monthlyAverage()}<span>/mês</span></p>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4" style="max-width: 50%;">
+                        <p class="media-category">Total:</p>
+                        <p class="media-value text-center text-light">${vagas.length}<span>vagas</span></p>
                     </div>
                 </div>
             </div>

@@ -56,7 +56,7 @@ export function topNavbar() {
     </div>
     <div class="col-11 text-right">
         <span class="search-input">
-            <input type="text" placeholder="Search...">
+            <input type="text" placeholder="Vagas ou empresas">
         </span>
         <!-- ícone de busca -->
         <span class="search-icon">

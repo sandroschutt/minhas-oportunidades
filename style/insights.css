@@ -61,16 +61,21 @@
   font-size: 16px;
 }
 
-#medias .row div {
-  margin-right: 20px;
+#medias .row {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
 #medias .media-category {
-  font-size: 32px;
+  font-size: 24px;
+  margin-bottom: 0;
 }
 
 #medias .media-value {
-  font-size: 28px;
+  font-size: 40px;
 }
 
 #medias .media-value span{
@@ -94,5 +99,8 @@
   #complementares .description {
     padding: 24px 16px 24px 16px;
     line-height: 1.1em;
+  }
+
+  #medias .row div {
   }
 }

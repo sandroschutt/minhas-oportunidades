@@ -1,11 +1,12 @@
 {
-    "theme" : "light",
+    "theme" : "dark",
     "categorias" : [
         "front-end",
         "back-end",
         "fullstack",
         "wordpress",
-        "web-dev"
+        "web",
+        "outros"
     ],
     "portais" : [
         "linkedin",
