@@ -7,7 +7,7 @@ export class Filters {
     homeContainer();
 
     let vagas = new Vagas();
-    vagas = vagas.get_vagas();
+    vagas = vagas.get_vagas().vagas;
 
     vagas.forEach((vaga) => {
       if((vaga.status == filtro && filterType == "status") || (vaga.categoria == filtro && filterType == "categoria") || (vaga.portal == filtro && filterType == "portal") && (vaga.is_trash == "false")){
@@ -17,7 +17,11 @@ export class Filters {
   }
 
   buscar(busca) {
+<<<<<<< HEAD
     let vagas = new Vagas().get_vagas();
+=======
+    let vagas = new Vagas().get_vagas().vagas;
+>>>>>>> development
     
     homeContainer();
     

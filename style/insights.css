@@ -18,7 +18,10 @@
   font-size: 64px;
   margin-top: -4px;
   margin-bottom: 0;
+<<<<<<< HEAD
   height: 70%;
+=======
+>>>>>>> development
 }
 
 #complementares span {
@@ -26,7 +29,10 @@
 }
 
 #complementares .border {
+<<<<<<< HEAD
   height: 114px;
+=======
+>>>>>>> development
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;

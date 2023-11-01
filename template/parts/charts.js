@@ -1,7 +1,11 @@
 import Vagas from "../../src/classes/Vagas.js";
 import { getWeekdays, setLineChartValues, setCategoriesChartValues, setPortalsChartValues } from "../../app/Controllers/InsightsController.js";
 
+<<<<<<< HEAD
 const vagas = new Vagas().get_vagas();
+=======
+const vagas = new Vagas().get_vagas().vagas;
+>>>>>>> development
 
 export function createLineChart(chartName = String) {
   $(document).ready(function () {

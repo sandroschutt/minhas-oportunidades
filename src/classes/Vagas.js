@@ -1,13 +1,17 @@
 export class Vagas {
   get_vagas() {
-    let minhas_vagas = JSON.parse(localStorage.getItem("vagas"));
-    minhas_vagas = minhas_vagas["vagas"];
+    let minhas_vagas = localStorage.getItem("vagas");
+    minhas_vagas = JSON.parse(minhas_vagas);
 
     return minhas_vagas;
   }
 
   get_vaga(id = String) {
+<<<<<<< HEAD
     let vagas = this.get_vagas();
+=======
+    let vagas = this.get_vagas().vagas;
+>>>>>>> development
     let vaga = {};
     for (let i = 0; i <= vagas.length - 1; i++) {
       if (vagas[i].id == id) {
@@ -19,7 +23,7 @@ export class Vagas {
   }
 
   index(id = String) {
-    let vagas = this.get_vagas();
+    let vagas = this.get_vagas().vagas;
 
     let index = null;
 
@@ -34,6 +38,8 @@ export class Vagas {
 
   get_favorites() {
     let vagas = this.get_vagas();
+    vagas = vagas.vagas;
+
     let vagas_favoritas = Array();
     vagas.forEach((vaga) => {
       vaga.is_favorite == "true" ? vagas_favoritas.push(vaga) : false;
@@ -49,7 +55,11 @@ export class Vagas {
   }
 
   edit(id = String, edited_values = Object.JSON) {
+<<<<<<< HEAD
     let vagas = this.get_vagas();
+=======
+    let vagas = this.get_vagas().vagas;
+>>>>>>> development
     let index = this.index(id);
 
     vagas[index].nome = edited_values.nome;
@@ -79,14 +89,32 @@ export class Vagas {
   }
 
   get_trash() {
+<<<<<<< HEAD
     let vagas = this.get_vagas();
     let trash_vagas = vagas.filter(vaga => vaga.is_trash == "true")
     // console.log(trash_vagas);
     return trash_vagas;
+=======
+    try {
+      let vagas = this.get_vagas();
+      vagas = vagas.vagas;
+      let trash_vagas = Array()
+      
+      vagas.map((vaga) => {
+        if(vaga.is_trash == "true") {
+          trash_vagas.push(vaga)
+        }
+      });
+
+      return trash_vagas;
+    } catch (error) {
+      console.log(error)
+    }
+>>>>>>> development
   }
 
   favorite(id = String) {
-    let vagas = this.get_vagas();
+    let vagas = this.get_vagas().vagas;
     let index = this.index(id);
     vagas[index].is_favorite == "true"
       ? (vagas[index].is_favorite = "false")

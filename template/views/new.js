@@ -27,7 +27,11 @@ export function newVaga() {
             <option style="background-color: ${bgColor}" value="jobs">jobs</option>
             <option style="background-color: ${bgColor}" value="trampos">trampos</option>
             <option style="background-color: ${bgColor}" value="email">email</option>
+<<<<<<< HEAD
             <option style="background-color: ${bgColor}" value="email">outros</option>
+=======
+            <option style="background-color: ${bgColor}" value="outros">outros</option>
+>>>>>>> development
             </select>
         </div>
 
@@ -47,7 +51,11 @@ export function newVaga() {
                 <option style="background-color: ${bgColor}" value="front-end">front-end</option>
                 <option style="background-color: ${bgColor}" value="back-end">back-end</option>
                 <option style="background-color: ${bgColor}" value="fullstack">fullstack</option>
+<<<<<<< HEAD
                 <option style="background-color: ${bgColor}" value="dev-wordpress">wordpress</option>
+=======
+                <option style="background-color: ${bgColor}" value="wordpress">wordpress</option>
+>>>>>>> development
                 <option style="background-color: ${bgColor}" value="web">web</option>
                 <option style="background-color: ${bgColor}" value="outros">outros</option>
         </select>

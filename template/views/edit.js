@@ -93,7 +93,11 @@ export function edit(vaga) {
       <option style="background-color: ${bgColor}" value="salva">Salva</option>
       <option style="background-color: ${bgColor}" value="aplicado">Aplicado</option>
       <option style="background-color: ${bgColor}" value="fit-cultural">Fit cultural</option>
+<<<<<<< HEAD
       <option style="background-color: ${bgColor}" value="exame-tecnico">Teste técnico</option>
+=======
+      <option style="background-color: ${bgColor}" value="teste">Teste técnico</option>
+>>>>>>> development
       <option style="background-color: ${bgColor}" value="entrevista">Entrevista</option>
       <option style="background-color: ${bgColor}" value="reprovado">Reprovado</option>
       <option style="background-color: ${bgColor}" value="aprovado">Aprovado</option>

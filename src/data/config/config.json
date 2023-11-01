@@ -20,7 +20,12 @@
         "fit-cultural",
         "teste",
         "reprovado",
+<<<<<<< HEAD
         "aprovado"
+=======
+        "aprovado",
+        "vaga-encerrada"
+>>>>>>> development
     ],
     "tags" : []
 }

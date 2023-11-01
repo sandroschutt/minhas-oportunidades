@@ -2,8 +2,14 @@ import { Config } from "../../src/classes/Config.js";
 import Vagas from "../../src/classes/Vagas.js";
 
 const confgs = new Config();
+<<<<<<< HEAD
 const vagas = new Vagas().get_vagas();
 const firstAppliance = vagas.reverse()[0].dataaplicacao;
+=======
+let vagas = new Vagas().get_vagas();
+vagas = vagas.vagas;
+const firstAppliance = vagas[vagas.length -1].dataaplicacao;
+>>>>>>> development
 
 export function applicationResponses(vagas = Array, total = Int) {
   let responses = vagas.filter((vaga) => vaga.dataretorno);
@@ -21,7 +27,11 @@ function getLastSevenDays() {
   const dates = [];
   const today = new Date(); // Get the current date
 
+<<<<<<< HEAD
   for (let i = 5; i >= (-1); i--) {
+=======
+  for (let i = 6; i >= (-1); i--) {
+>>>>>>> development
     const date = new Date(today);
     date.setDate(today.getDate() - i); // Subtract days from the current date
 
@@ -37,7 +47,11 @@ function getLastSevenDays() {
 }
 
 export function getWeekdays() {
+<<<<<<< HEAD
   const weekdays = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sab"];
+=======
+  const weekdays = ["Seg", "Ter", "Qua", "Qui", "Sex", "Sab", "Dom"];
+>>>>>>> development
   const lastSevenDays = getLastSevenDays();
   const portugueseWeekdays = [];
 
@@ -199,8 +213,11 @@ function getDaysInMonthsInRange() {
     givenDate.setMonth(givenDate.getMonth() + 1);
     givenDate.setDate(1); // Set the date to the beginning of the next month
   }
+<<<<<<< HEAD
 
   console.log(months);
+=======
+>>>>>>> development
   return months;
 }
 

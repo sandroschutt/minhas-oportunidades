@@ -16,7 +16,7 @@ export class Home {
     delete(id = String) {
         // deleta vaga
         let vagas = new Vagas();
-        let minhas_vagas = vagas.get_vagas()
+        let minhas_vagas = vagas.get_vagas().vagas;
         let index = vagas.index(id)
         minhas_vagas[index].is_trash = "true";
         vagas.update(minhas_vagas)

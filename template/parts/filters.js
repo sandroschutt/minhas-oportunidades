@@ -16,25 +16,29 @@ export function filterVagas() {
               <select class="filter-tab btn filter-rounded border border-secondary text-secondary py-1 px-2" data-status>
                 <option class="text-primary" value="" selected hidden>Status</option>
                 <option class="text-primary" value="aplicado">
-                  <span class="categoria filter-tab btn btn-dark filter-rounded py-1 px-2 text-primary">Aplicado</span>
+                  <span class="categoria filter-tab btn btn-dark filter-rounded py-1 px-2 text-primary">aplicado</span>
                 </option>
                 <option class="text-secondary" value="fit-cultural">
-                  <span class="categoria filter-tab btn btn-dark filter-rounded py-1 px-2">Fit cultural</span>
+                  <span class="categoria filter-tab btn btn-dark filter-rounded py-1 px-2">fit cultural</span>
                 </option>
                 <option class="text-info" value="entrevista">
-                  <span class="categoria filter-tab btn btn-dark filter-rounded py-1 px-2">Entrevista</span>
+                  <span class="categoria filter-tab btn btn-dark filter-rounded py-1 px-2">entrevista</span>
                 </option>
                 <option class="" style="color: darkorange" value="exame-tecnico">
                   <span class="categoria filter-tab btn btn-dark filter-rounded py-1 px-2">Avaliação técnica</span>
                 </option>
                 <option class="text-danger" value="reprovado">
-                  <span class="categoria filter-tab btn btn-dark filter-rounded py-1 px-2">Reprovado</span>
+                  <span class="categoria filter-tab btn btn-dark filter-rounded py-1 px-2">reprovado</span>
                 </option>
                 <option class="text-success">
-                  <span class="categoria filter-tab btn btn-dark filter-rounded py-1 px-2" value="aprovado">Aprovado</span>
+                  <span class="categoria filter-tab btn btn-dark filter-rounded py-1 px-2" value="aprovado">aprovado</span>
                 </option>
                 <option class="text-dark">
+<<<<<<< HEAD
                   <span class="categoria filter-tab btn btn-dark filter-rounded py-1 px-2" value="encerrada">Encerrada</span>
+=======
+                  <span class="categoria filter-tab btn btn-dark filter-rounded py-1 px-2" value="vaga-encerrada">vaga-encerrada</span>
+>>>>>>> development
                 </option>
               </select>
               <span class="text-secondary mx-2 divider">|</span>
