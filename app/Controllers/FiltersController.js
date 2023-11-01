@@ -17,11 +17,7 @@ export class Filters {
   }
 
   buscar(busca) {
-<<<<<<< HEAD
-    let vagas = new Vagas().get_vagas();
-=======
     let vagas = new Vagas().get_vagas().vagas;
->>>>>>> development
     
     homeContainer();
     

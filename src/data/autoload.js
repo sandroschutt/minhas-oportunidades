@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-let has_data = false;
-localStorage.getItem('config') == null || localStorage.getItem('vagas') == null ? has_data = false : has_data = true;
-
-if(!has_data){
-=======
 import Vagas from "../classes/Vagas.js";
 
 let has_data = false;
@@ -12,7 +6,6 @@ localStorage.getItem("config") == null || localStorage.getItem("vagas") == null
   : (has_data = true);
 
 if (!has_data) {
->>>>>>> development
   create_local_json_config();
   create_local_json_vagas();
 } else {
@@ -28,13 +21,8 @@ async function create_local_json_vagas() {
 }
 
 async function create_local_json_config() {
-<<<<<<< HEAD
-  let config = get_model('config');
-  
-=======
   let config = get_model("config");
 
->>>>>>> development
   localStorage.setItem("config", JSON.stringify(await config));
 
   window.location.reload();
@@ -42,11 +30,8 @@ async function create_local_json_config() {
 
 async function get_model(model) {
   let fetchModel = await fetch(`./src/data/${model}/${model}.json`);
-<<<<<<< HEAD
-  let final_model = await fetchModel.json()
-=======
+
   let final_model = await fetchModel.json();
->>>>>>> development
 
   return await final_model;
 }

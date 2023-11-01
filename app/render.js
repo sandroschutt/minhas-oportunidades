@@ -21,11 +21,7 @@ import { setStatusChartValues } from "./Controllers/InsightsController.js";
 export function render(view = String, id = null) {
   const configs = new Config();
   const cVagas = new Vagas();
-<<<<<<< HEAD
-  let vagas = cVagas.get_vagas();
-=======
   let vagas = cVagas.get_vagas().vagas;
->>>>>>> development
   let vaga = cVagas.get_vaga(id);
 
   let listViews = Array(

@@ -7,11 +7,8 @@ export class Vagas {
   }
 
   get_vaga(id = String) {
-<<<<<<< HEAD
-    let vagas = this.get_vagas();
-=======
     let vagas = this.get_vagas().vagas;
->>>>>>> development
+
     let vaga = {};
     for (let i = 0; i <= vagas.length - 1; i++) {
       if (vagas[i].id == id) {
@@ -55,11 +52,7 @@ export class Vagas {
   }
 
   edit(id = String, edited_values = Object.JSON) {
-<<<<<<< HEAD
-    let vagas = this.get_vagas();
-=======
     let vagas = this.get_vagas().vagas;
->>>>>>> development
     let index = this.index(id);
 
     vagas[index].nome = edited_values.nome;
@@ -89,12 +82,6 @@ export class Vagas {
   }
 
   get_trash() {
-<<<<<<< HEAD
-    let vagas = this.get_vagas();
-    let trash_vagas = vagas.filter(vaga => vaga.is_trash == "true")
-    // console.log(trash_vagas);
-    return trash_vagas;
-=======
     try {
       let vagas = this.get_vagas();
       vagas = vagas.vagas;
@@ -110,7 +97,6 @@ export class Vagas {
     } catch (error) {
       console.log(error)
     }
->>>>>>> development
   }
 
   favorite(id = String) {

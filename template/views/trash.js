@@ -15,12 +15,8 @@ export function trashContainer() {
 }
 
 export function trashView() {
-<<<<<<< HEAD
 
-    let trashHeader = `
-=======
   let trashHeader = `
->>>>>>> development
         <div id="header" class="single" style="margin-bottom: 15%;">
             <h2 style="margin-bottom: 0;"><strong>Lixeira</strong></h2>
             <span class="mr-2 text-secondary">${trashVagas.length} vagas</span>
@@ -33,7 +29,9 @@ export function trashView() {
 export function trashItems() {
   let vagas = new Vagas().get_trash();
 
-  //   console.log(vagas);
+  let teste = new Vagas().get_vagas().vagas;
+
+    console.log(teste[0]);
 
   trashContainer();
 

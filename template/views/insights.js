@@ -6,15 +6,10 @@ import {
   weeklyAverage,
   monthlyAverage,
 } from "../../app/Controllers/InsightsController.js";
-<<<<<<< HEAD
-let vagas = new Vagas().get_vagas();
-const total = new Vagas().get_vagas().length;
-=======
+
 const getVagas = new Vagas().get_vagas();
 let vagas = getVagas.vagas;
 const total = vagas.length
-
->>>>>>> development
 
 const dailyAverage = total / getDaysDifference();
 
