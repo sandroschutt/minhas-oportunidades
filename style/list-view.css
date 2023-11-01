@@ -1,18 +1,18 @@
 /* listview */
 #list-mobile {
   margin: 7%;
-  color: #5d6062;
+  color: #727272;
 }
 
 .card {
-  background-color: #282828;
+  background-color: none !important;
   border: none;
   margin-bottom: 25px;
   overflow: hidden;
 }
 
 .card .heading {
-  border-bottom: 0.5px solid #5d6062;
+  border-bottom: 0.5px solid #979a9c;
   padding-bottom: 10px;
 }
 
@@ -27,7 +27,7 @@
   font-weight: 600;
 }
 
-.fa-circle {
+.fa-circle-dot {
   font-size: 12px;
 }
 
@@ -66,4 +66,45 @@
 
 .card .actions .options span {
   margin-right: 10px;
+}
+
+.basic-actions span {
+  margin-right: 8px;
+}
+
+@media screen and (min-width: 1000px) {
+  #list-mobile {
+    margin: 3%;
+  }
+
+  .vaga-mobile {
+    width: 100%;
+  }
+
+  .vaga-mobile .vaga-nome-mobile {
+    width: 92%;
+  }
+
+  .card .preview-info,
+  .card .descricao,
+  .card .actions {
+    padding: 0px 5.5% !important;
+  }
+
+  .card .preview-info {
+    font-size: 15px;
+    margin: 20px 0 20px;
+  }
+
+  .card .preview-info p {
+    margin-bottom: 3px;
+  }
+
+  .card .descricao p {
+    font-size: 16px;
+  }
+
+  .card .descricao {
+    margin-bottom: 50px;
+  }
 }

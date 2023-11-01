@@ -1,8 +1,11 @@
-import { Vagas } from "../../src/classes/Vagas.js";
+import { Config } from "../../src/classes/Config.js";
+import { theme } from "../../app/Controllers/ConfigController.js";
 import { Home } from "../../app/Controllers/HomeController.js";
 import { render } from "../../app/render.js";
 
-// homeContainer();
+const configs = new Config().get();
+
+theme(configs.theme);
 
 export function homeContainer() {
   let homeContainer = `
@@ -74,15 +77,18 @@ export function novaVaga(vaga) {
   }
 
   let identifier = parseInt(vaga.id) ** 3 / (25 / 100);
+  let nome = vaga.nome;
+
+  window.screen.width < 900 ? nome = vaga.nome.substring(0, 30) : nome = vaga.nome;
 
   let item = `
-    <div class="card">
+    <div class="card bg-transparent">
     <div class="heading" id="heading${identifier}">
         <div class="vaga-mobile" data-toggle="collapse" data-target="#collapse${identifier}" aria-expanded="true" aria-controls="collapse${identifier}">
         <i class="fa-solid fa-file"></i>
-        <span class="vaga-nome-mobile">${vaga.nome.substring(0, 30)}</span>
+        <span class="vaga-nome-mobile">${nome}</span>
         <span>
-            <i class="fa-regular fa-circle" style="color: ${status_color}"></i>
+            <i class="fa-regular fa-circle-dot" style="color: ${status_color}"></i>
         </span>
         </div>
     </div>
@@ -103,19 +109,20 @@ export function novaVaga(vaga) {
         <div class="descricao ">
             <h6><strong>Descrição:</strong></h6>
             <p>
-            ${vaga.descricao.substring(0, 150)}...
+            ${window.screen.width < 1000 ? vaga.descricao.substring(0, 200) : vaga.descricao.substring(0, 800)}...
             </p>
         </div>
 
         <div class="actions row">
-            <div class="col">
-            <span class="edit edit-${identifier}"><i class="fa-solid fa-pen-to-square"></i></span>
-            <span class="favorite favorite-${identifier}"><i class="fa-solid fa-star"></i></span>
-            <span class="delete delete-${identifier}"><i class="fa-solid fa-trash-can"></i></span>
+            <div class="col basic-actions">
+              <span class="edit edit-${identifier}"><i class="fa-solid fa-pen-to-square"></i></span>
+              <span class="favorite favorite-${identifier}"><i class="fa-solid fa-star"></i></span>
+              <span class="link link-${identifier}"><i class="fa-solid fa-link"></i></span>
+              <span class="delete delete-${identifier}"><i class="fa-solid fa-trash-can"></i></span>
             </div>
 
             <div class="col text-right">
-            <span class="visit visit-${identifier}"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+              <span class="visit visit-${identifier}" id="${vaga.id}"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
             </div>
         </div>
         </div>
@@ -132,8 +139,21 @@ export function add_vaga_events(item, home, vaga, identifier = null) {
     home.edit(vaga.id);
   });
 
+  let starIconColor = '#666464;';
+  vaga.is_favorite == "true" ? starIconColor = "yellow" : starIconColor = starIconColor;
+  $(`.favorite-${identifier}`).css('color', starIconColor);
+
+  const setStarIconColor = (color = String) => {
+    $(`.favorite-${identifier}`).css('color', color)
+  };
+
   $(`.favorite-${identifier}`).click(() => {
+    $(`.favorite-${identifier}`).css('color') == "rgb(255, 255, 0)" ? setStarIconColor('#979a9c') : setStarIconColor('yellow');
     home.favorite(vaga.id);
+  });
+
+  $(`.link-${identifier}`).click(() => {
+    window.open(vaga.url, '_blank');
   });
 
   $(`.delete-${identifier}`).click(() => {

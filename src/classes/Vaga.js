@@ -18,13 +18,10 @@ export class Vaga {
 
     insert() {
         const vgs = new Vagas;
-        let vagas = vgs.get_vagas();
+        let vagas = vgs.get_vagas().vagas;
         
         let id = parseInt(vagas[0].id) + 1;
-        console.log(`
-            index: ${vagas[0].id}\n
-            id: ${id}
-        `)
+
         id = id.toString();
         this.id = id;
 

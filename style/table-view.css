@@ -1,6 +1,6 @@
 #content table {
     width: 100%;
-    background-color: #282828;
+    background-color: #000000;
     color: lightgrey
 }
 
@@ -11,7 +11,7 @@ th, td {
 #filter-tabs {
     margin-right: 0;
     margin-left: 0;
-    background-color: #282828;
+    background-color: #000000;
 }
 
 #filter-tabs ul,

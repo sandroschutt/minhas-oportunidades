@@ -1,0 +1,27 @@
+{
+    "theme" : "dark",
+    "categorias" : [
+        "front-end",
+        "back-end",
+        "fullstack",
+        "wordpress",
+        "web",
+        "outros"
+    ],
+    "portais" : [
+        "linkedin",
+        "gupy",
+        "jobs",
+        "e-mail",
+        "outros"
+    ],
+    "status" : [
+        "aplicado",
+        "fit-cultural",
+        "teste",
+        "reprovado",
+        "aprovado",
+        "vaga-encerrada"
+    ],
+    "tags" : []
+}

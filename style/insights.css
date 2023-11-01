@@ -1,0 +1,104 @@
+#insights-container {
+  padding: 0px 24px;
+}
+
+#insights-container section {
+  display: block;
+  margin-top: 30px;
+  margin-bottom: 80px;
+}
+
+#insights-container section {
+  font-weight: 900 !important;
+  color: #979a9c;
+}
+
+#complementares p {
+  font-weight: 600;
+  font-size: 64px;
+  margin-top: -4px;
+  margin-bottom: 0;
+}
+
+#complementares span {
+  font-weight: bold;
+}
+
+#complementares .border {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+#complementares .row {
+  margin-top: 16px;
+}
+
+#complementares p {
+  font-size: 80px;
+}
+
+#complementares p span {
+  font-size: 20px;
+}
+
+#complementares .percentage {
+  max-width: 30%;
+  text-align: center;
+}
+
+#complementares .description {
+  padding: 24px 16px 24px 32px;
+  line-height: 1.1em;
+}
+
+#complementares .description span {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+#medias .row {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+#medias .media-category {
+  font-size: 24px;
+  margin-bottom: 0;
+}
+
+#medias .media-value {
+  font-size: 40px;
+}
+
+#medias .media-value span{
+  font-size: 16px;
+}
+
+@media screen and (min-width: 1000px) {
+  #insights-container {
+    padding: 0 86px;
+  }
+
+  #insights-container section {
+    margin-bottom: 86px;
+  }
+  
+  #complementares .ap-responses,
+  #complementares  .ap-status {
+    margin-right: 1%;
+  }
+
+  #complementares .description {
+    padding: 24px 16px 24px 16px;
+    line-height: 1.1em;
+  }
+
+  #medias .row div {
+  }
+}

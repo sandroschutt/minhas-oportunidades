@@ -1,16 +1,16 @@
 export class Vagas {
   get_vagas() {
-    let minhas_vagas = JSON.parse(localStorage.getItem("vagas"));
-    minhas_vagas = minhas_vagas["vagas"];
+    let minhas_vagas = localStorage.getItem("vagas");
+    minhas_vagas = JSON.parse(minhas_vagas);
 
     return minhas_vagas;
   }
 
-  get_vaga(id = String){
-    let vagas = this.get_vagas();
+  get_vaga(id = String) {
+    let vagas = this.get_vagas().vagas;
     let vaga = {};
-    for(let i = 0; i <= vagas.length - 1; i++){
-      if(vagas[i].id == id) {
+    for (let i = 0; i <= vagas.length - 1; i++) {
+      if (vagas[i].id == id) {
         vaga = vagas[i];
         break;
       }
@@ -19,7 +19,7 @@ export class Vagas {
   }
 
   index(id = String) {
-    let vagas = this.get_vagas();
+    let vagas = this.get_vagas().vagas;
 
     let index = null;
 
@@ -34,6 +34,8 @@ export class Vagas {
 
   get_favorites() {
     let vagas = this.get_vagas();
+    vagas = vagas.vagas;
+
     let vagas_favoritas = Array();
     vagas.forEach((vaga) => {
       vaga.is_favorite == "true" ? vagas_favoritas.push(vaga) : false;
@@ -49,13 +51,15 @@ export class Vagas {
   }
 
   edit(id = String, edited_values = Object.JSON) {
-    let vagas = this.get_vagas();
-    let index = this.index(id)
-    
+    let vagas = this.get_vagas().vagas;
+    let index = this.index(id);
+
     vagas[index].nome = edited_values.nome;
     vagas[index].empresa = edited_values.empresa;
     vagas[index].portal = edited_values.portal;
+    vagas[index].url = edited_values.url;
     vagas[index].categoria = edited_values.categoria;
+    vagas[index].especialidade = edited_values.especialidade;
     vagas[index].dataaplicacao = edited_values.dataaplicacao;
     vagas[index].dataretorno = edited_values.dataretorno;
     vagas[index].status = edited_values.status;
@@ -68,16 +72,34 @@ export class Vagas {
     vagas.forEach((vaga) => {
       if (vaga.id == id) {
         vaga.is_trash = "true";
-        let index = this.index(vaga.id)
-        vagas.splice(index, 1)
+        let index = this.index(vaga.id);
+        vagas.splice(index, 1);
       }
     });
 
     this.update(vagas);
   }
 
+  get_trash() {
+    try {
+      let vagas = this.get_vagas();
+      vagas = vagas.vagas;
+      let trash_vagas = Array()
+      
+      vagas.map((vaga) => {
+        if(vaga.is_trash == "true") {
+          trash_vagas.push(vaga)
+        }
+      });
+
+      return trash_vagas;
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   favorite(id = String) {
-    let vagas = this.get_vagas();
+    let vagas = this.get_vagas().vagas;
     let index = this.index(id);
     vagas[index].is_favorite == "true"
       ? (vagas[index].is_favorite = "false")

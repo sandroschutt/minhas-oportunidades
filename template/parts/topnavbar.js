@@ -1,8 +1,13 @@
-import { render } from "../../app/render.js";
+import { Config } from "../../src/classes/Config.js";
+import { render, setReferer, lastActions } from "../../app/render.js";
 import { Filters } from "../../app/Controllers/FiltersController.js";
 
-let topnavbar = `
-    <nav>
+export function topNavbar() {
+  let currentTheme = new Config().get();
+  currentTheme = currentTheme.theme;
+
+  let topnavbar = `
+    <nav class="">
     <div id="fluid-navigation" class="row d-flex">
     <div class="col-1">
         <!-- ícone -->
@@ -34,9 +39,9 @@ let topnavbar = `
                     data-target="#exportModal">
                         Exportar
                     </p>
+                    <p class="lixeira" id="favoritos">Favoritos</p>
                     <p class="lixeira" id="lixeira">Lixeira</p>
-                    <hr class="bg-grey">
-                    <p class="configuracoes" id="configuracoes">Configurações</p>
+                    <p class="configuracoes" id="configuracoes" style="display: none;">Configurações</p>
                 </li>
                 <li>
                     <h5 class="arquivo">Sobre</h5>
@@ -45,12 +50,13 @@ let topnavbar = `
             </ul>
             <span class="menu theme">
                 <i class="fa-solid fa-circle-half-stroke"></i>
+                <span class="current-theme">${currentTheme == 'light' ? 'dark' : 'light'}</span>
             </span>
         </div>
     </div>
     <div class="col-11 text-right">
         <span class="search-input">
-            <input type="text" placeholder="Search...">
+            <input type="text" placeholder="Vagas ou empresas">
         </span>
         <!-- ícone de busca -->
         <span class="search-icon">
@@ -61,35 +67,69 @@ let topnavbar = `
     </nav>
 `;
 
-$("#navigation-container").prepend(topnavbar);
+  $("#navigation-container").html(topnavbar);
 
-$(document).ready(function () {
+  const configurations = new Config();
+  const menuContainer = $('.menu-container');
   const menuIconOutside = $(".menu-icon-outside");
   const menuIconInside = $(".menu-icon-inside");
+  const searchInput = $('.search-input input');
+  const changeTheme = $('.menu.theme');
 
   const filters = new Filters();
 
+  const toggleOpen = (toggleItem = Object.html) => {
+    toggleItem.toggleClass("open");
+  }
+
   menuIconInside.click(() => {
-    let menu = $(".menu-container");
-    menu.toggleClass("open");
+    toggleOpen(menuContainer);
   });
 
   menuIconOutside.click(() => {
-    let menu = $(".menu-container");
-    menu.toggleClass("open");
-  });
-
-  $("#lixeira").click(() => {
-    render("trash");
-    let menu = $(".menu-container");
-    menu.toggleClass("open");
+    toggleOpen(menuContainer);
   });
 
   $('.search-icon').click(() => {
-    $('.search-input').toggleClass('open')
+    toggleOpen($('.search-input'))
+    searchInput.focus();
   })
 
-  $('.search-input input').keyup(() => {
-    filters.buscar($('.search-input input').val())
+  searchInput.keyup(() => {
+    filters.buscar(searchInput.val())
   })
-});
+
+  changeTheme.click(() => {
+    let defineTheme = configurations.get();
+    defineTheme = defineTheme.theme;
+    defineTheme == 'light' ?
+    configurations.set_theme('dark') :
+    configurations.set_theme('light');
+  })
+
+  $("#lixeira").click(() => {
+    render("trash");
+    toggleOpen(menuContainer);
+    setReferer(lastActions, 'trash');
+  });
+
+  $("#favoritos").click(() => {
+    render("favorites");
+    toggleOpen(menuContainer);
+    setReferer(lastActions, 'favorites');
+  });
+
+  $('#configuracoes').click(() => {
+    render('configs');
+    toggleOpen(menuContainer);
+    setReferer(lastActions, 'configs');
+  })
+
+  $('#minhas-oportunidades').click(() => {
+    render('about');
+    toggleOpen(menuContainer);
+    setReferer(lastActions, 'about');
+  })
+}
+
+topNavbar();

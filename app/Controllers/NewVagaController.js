@@ -5,13 +5,13 @@ export function addNewVaga() {
     let today = new Date().toJSON().slice(0, 10);
 
     let new_vaga_values = {
-      nome: $("#nome").val(),
-      empresa: $("#empresa").val(),
-      descricao: $("#descricao").val(),
-      portal: $("#portal").val(),
-      categoria: $("#categoria").val(),
+      nome: $("#new-nome").val(),
+      empresa: $("#new-empresa").val(),
+      descricao: $("#new-descricao").val(),
+      portal: $("#new-portal").val(),
+      categoria: $("#new-categoria").val(),
       dataaplicacao: today,
-      url: $("#url").val(),
+      url: $("#new-url").val(),
     };
 
     let new_vaga = new Vaga(

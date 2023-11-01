@@ -1,3 +1,7 @@
+import { selectOptionThemeColor } from "../../app/Controllers/ConfigController.js";
+
+let bgColor = selectOptionThemeColor();
+
 export function newVaga() {
     let new_vaga = `
     <div id="header">
@@ -7,50 +11,49 @@ export function newVaga() {
     <form id="view-container">
         <div class="">
             <label for="nome" class="">Nome:</label>
-            <input type="text" class="" id="nome" value="">
+            <input type="text" class="" id="new-nome" value="">
         </div>
 
         <div class="form-group">
             <label for="empresa" class="">Empresa:</label>
-            <input type="text" class="" id="empresa" value="">
+            <input type="text" class="" id="new-empresa" value="">
         </div>
 
-        <div class="">
-            <label for="portal" class="">Portal:</label>
-            <select class="" id="portal" value="">
-            <option value="linkedin">linkedin</option>
-            <option value="gupy">gupy</option>
-            <option value="email">email</option>
+        <div>
+            <label for="portal">Portal:</label>
+            <select class="" id="new-portal">
+            <option style="background-color: ${bgColor}" value="linkedin">linkedin</option>
+            <option style="background-color: ${bgColor}" value="gupy">gupy</option>
+            <option style="background-color: ${bgColor}" value="jobs">jobs</option>
+            <option style="background-color: ${bgColor}" value="trampos">trampos</option>
+            <option style="background-color: ${bgColor}" value="email">email</option>
+            <option style="background-color: ${bgColor}" value="outros">outros</option>
             </select>
         </div>
 
         <div class="">
             <label for="url" class="">URL:</label>
-            <input type="text" class="" id="url" value="">
+            <input type="text" class="" id="new-url" value="">
         </div>
 
         <div class="">
             <label for="descricao" class="">Descricao:</label>
-            <textarea class="" id="descricao"></textarea>
+            <textarea class="" id="new-descricao"></textarea>
         </div>
 
         <div class="">
             <label for="categoria" class="">Categoria:</label>
-            <select class="" id="categoria" value="">
-                <option value="front-end">front-end</option>
-                <option value="front-end-pleno">front-end-pleno</option>
-                <option value="front-end-senior">front-end-senior</option>
-                <option value="back-end">back-end</option>
-                <option value="back-end-pleno">back-end-pleno</option>
-                <option value="back-end-senior">back-end-senior</option>
-                <option value="fullstack">fullstack</option>
-                <option value="fullstack-pleno">fullstack-pleno</option>
-                <option value="fullstack-senior">fullstack-senior</option>
+            <select class="" id="new-categoria">
+                <option style="background-color: ${bgColor}" value="front-end">front-end</option>
+                <option style="background-color: ${bgColor}" value="back-end">back-end</option>
+                <option style="background-color: ${bgColor}" value="fullstack">fullstack</option>
+                <option style="background-color: ${bgColor}" value="wordpress">wordpress</option>
+                <option style="background-color: ${bgColor}" value="web">web</option>
+                <option style="background-color: ${bgColor}" value="outros">outros</option>
         </select>
         </div>
 
-        <button type="button" class="btn btn-dark py-0 px-2" data-dismiss="modal">Cancelar</button>
-        <button type="button" id="save-new-vaga" "class="btn btn-dark">Salvar</button>
+        <button type="button" id="save-new-vaga" class="btn btn-dark border border-secondary">Salvar</button>
     </form>
       `;
   

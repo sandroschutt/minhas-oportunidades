@@ -1,7 +1,7 @@
 /* filters */
 #filter-tabs {
   padding: 2% 0;
-  border-bottom: 1px solid #5d6062;
+  border-bottom: 1px solid #979a9c;
 }
 
 #filter-tabs select {
@@ -10,11 +10,11 @@
 }
 
 #filter-tabs select option {
-  background-color: #282828;
+  /* background-color: #000000; */
 }
 
 #filter-tabs select option:checked {
-  background-color: black !important;
+  /* background-color: black !important; */
 }
 
 #filter-tabs .divider {
@@ -24,7 +24,7 @@
 #filter-tabs {
   margin-right: 0;
   margin-left: 0;
-  background-color: #282828;
+  /* background-color: #000000; */
 }
 
 #filter-tabs ul,
@@ -76,4 +76,11 @@ text-center .yellow-tab {
 
 tr[data-id="0"] {
   display: none;
+}
+
+@media screen and (min-width: 1000px) {
+  #filter-tabs {
+    padding: 0.5% 0;
+    border-bottom: 1px solid #979a9c;
+  }
 }

@@ -14,13 +14,13 @@ let export_modal = `
       <div class="modal-body">
         <form>
           <div class="form-group">
-            <select id="exportar-opcoes" class="form-control-sm bg-dark border border-0">
+            <select id="exportar-opcoes" class="form-control" style="border-color: #00000010">
                 <option value="vagas">Vagas</option>
                 <option value="config">Configurações</option>
             </select>
           </div>
-          <button type="button" class="btn btn-dark py-0 px-2" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-dark py-0 px-2" id="export-button">Exportar</button>
+          <button type="button" class="btn py-0 px-2" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn py-0 px-2" id="export-button" style"background-color: #00000030; color: #fff!important; font-weight: bold;">Exportar</button>
         </form>
       </div>
     </div>
@@ -31,10 +31,10 @@ let export_modal = `
 $("#mo-content").append(export_modal);
 
 $("#export-button").click(() => {
-  console.log("clicou");
   if ($("#exportar-opcoes").val() == "vagas") {
+    let today = new Date().toJSON().slice(0, 10);
     const vagas = new Vagas().get_vagas();
-    const filename = "data.json";
+    const filename = `mo_bkp_${today}.json`;
     const jsonStr = JSON.stringify(vagas);
 
     let element = document.createElement("a");
@@ -51,6 +51,6 @@ $("#export-button").click(() => {
 
     document.body.removeChild(element);
   } else {
-    alert('Funcionalidade em desenvolvimento...');
+    alert("Funcionalidade em desenvolvimento...");
   }
 });
